@@ -121,7 +121,6 @@ namespace STSM.Forms
                 dal.cnClose();
             }
             MainMenu.finalDataTable.Clear();
-            MessageBox.Show("Successfully completed sale!");
         }
 
         private void ExitCheckout_Click(object sender, EventArgs e)

@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Exit_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.about_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.sales_btn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -54,14 +57,6 @@
             this.panel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.addItem_btn = new System.Windows.Forms.Button();
             this.dataview_main = new System.Windows.Forms.DataGridView();
-            this.barcode_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDate_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_info = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.total_usd = new System.Windows.Forms.Label();
             this.usd1 = new System.Windows.Forms.Label();
@@ -84,8 +79,6 @@
             this.euro_price_label = new System.Windows.Forms.Label();
             this.dollar_price_label = new System.Windows.Forms.Label();
             this.startup_label = new System.Windows.Forms.Label();
-            this.lang_setting_label = new System.Windows.Forms.Label();
-            this.lang_btn = new DevExpress.XtraEditors.DropDownButton();
             this.lang_popup = new DevExpress.XtraBars.PopupMenu(this.components);
             this.langitem2 = new DevExpress.XtraBars.BarButtonItem();
             this.langitem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -103,6 +96,12 @@
             this.pro_disable_enable_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pro_clear_all = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pro_manage = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.barcode_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataview_main)).BeginInit();
@@ -854,71 +853,54 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataview_main.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataview_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataview_main.BackgroundColor = System.Drawing.Color.Cyan;
+            this.dataview_main.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataview_main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataview_main.ColumnHeadersHeight = 35;
+            this.dataview_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataview_main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.barcode_clm,
             this.productName_clm,
             this.price_clm,
             this.quantity_clm,
             this.total_clm,
-            this.productId_clm,
-            this.orderId_clm,
-            this.orderDate_clm});
+            this.productId_clm});
+            this.dataview_main.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataview_main.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataview_main.Location = new System.Drawing.Point(1, 90);
             this.dataview_main.Margin = new System.Windows.Forms.Padding(0);
             this.dataview_main.Name = "dataview_main";
+            this.dataview_main.ReadOnly = true;
+            this.dataview_main.RowHeadersWidth = 25;
+            this.dataview_main.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataview_main.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataview_main.RowTemplate.Height = 35;
+            this.dataview_main.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataview_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataview_main.Size = new System.Drawing.Size(1630, 655);
             this.dataview_main.TabIndex = 18;
             this.dataview_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_main_CellContentClick);
             this.dataview_main.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dataview_main_RowHeaderMouseDoubleClick);
-            // 
-            // barcode_clm
-            // 
-            this.barcode_clm.HeaderText = "Barcode";
-            this.barcode_clm.Name = "barcode_clm";
-            // 
-            // productName_clm
-            // 
-            this.productName_clm.HeaderText = "Product Name";
-            this.productName_clm.Name = "productName_clm";
-            // 
-            // price_clm
-            // 
-            this.price_clm.HeaderText = "Price";
-            this.price_clm.Name = "price_clm";
-            this.price_clm.ReadOnly = true;
-            // 
-            // quantity_clm
-            // 
-            this.quantity_clm.HeaderText = "Quantity";
-            this.quantity_clm.Name = "quantity_clm";
-            this.quantity_clm.ReadOnly = true;
-            // 
-            // total_clm
-            // 
-            this.total_clm.HeaderText = "Total";
-            this.total_clm.Name = "total_clm";
-            this.total_clm.ReadOnly = true;
-            // 
-            // productId_clm
-            // 
-            this.productId_clm.HeaderText = "Product ID";
-            this.productId_clm.Name = "productId_clm";
-            this.productId_clm.Visible = false;
-            // 
-            // orderId_clm
-            // 
-            this.orderId_clm.HeaderText = "Order ID";
-            this.orderId_clm.Name = "orderId_clm";
-            this.orderId_clm.ReadOnly = true;
-            this.orderId_clm.Visible = false;
-            // 
-            // orderDate_clm
-            // 
-            this.orderDate_clm.HeaderText = "Order Date";
-            this.orderDate_clm.Name = "orderDate_clm";
-            this.orderDate_clm.ReadOnly = true;
-            this.orderDate_clm.Visible = false;
             // 
             // order_info
             // 
@@ -1113,8 +1095,6 @@
             this.gc1.Controls.Add(this.euro_price_label);
             this.gc1.Controls.Add(this.dollar_price_label);
             this.gc1.Controls.Add(this.startup_label);
-            this.gc1.Controls.Add(this.lang_setting_label);
-            this.gc1.Controls.Add(this.lang_btn);
             this.gc1.Controls.Add(this.gc3);
             this.gc1.Controls.Add(this.gc2);
             this.gc1.FireScrollEventOnMouseWheel = true;
@@ -1135,7 +1115,7 @@
             this.return_switch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.return_switch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.return_switch.ForeColor = System.Drawing.Color.White;
-            this.return_switch.Location = new System.Drawing.Point(371, 238);
+            this.return_switch.Location = new System.Drawing.Point(409, 132);
             this.return_switch.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.return_switch.Name = "return_switch";
             this.return_switch.Oncolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1151,7 +1131,7 @@
             this.return_access_label.BackColor = System.Drawing.Color.Transparent;
             this.return_access_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.return_access_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.return_access_label.Location = new System.Drawing.Point(18, 238);
+            this.return_access_label.Location = new System.Drawing.Point(56, 132);
             this.return_access_label.Name = "return_access_label";
             this.return_access_label.Size = new System.Drawing.Size(274, 20);
             this.return_access_label.TabIndex = 34;
@@ -1180,7 +1160,7 @@
             this.reset_settings_btn.IconVisible = true;
             this.reset_settings_btn.IconZoom = 90D;
             this.reset_settings_btn.IsTab = false;
-            this.reset_settings_btn.Location = new System.Drawing.Point(301, 433);
+            this.reset_settings_btn.Location = new System.Drawing.Point(339, 327);
             this.reset_settings_btn.Margin = new System.Windows.Forms.Padding(0);
             this.reset_settings_btn.Name = "reset_settings_btn";
             this.reset_settings_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1218,7 +1198,7 @@
             this.apply_settings_btn.IconVisible = true;
             this.apply_settings_btn.IconZoom = 90D;
             this.apply_settings_btn.IsTab = false;
-            this.apply_settings_btn.Location = new System.Drawing.Point(20, 433);
+            this.apply_settings_btn.Location = new System.Drawing.Point(58, 327);
             this.apply_settings_btn.Margin = new System.Windows.Forms.Padding(0);
             this.apply_settings_btn.Name = "apply_settings_btn";
             this.apply_settings_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1244,7 +1224,7 @@
             this.dollar_txtedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dollar_txtedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.dollar_txtedit.isPassword = false;
-            this.dollar_txtedit.Location = new System.Drawing.Point(339, 286);
+            this.dollar_txtedit.Location = new System.Drawing.Point(377, 180);
             this.dollar_txtedit.Margin = new System.Windows.Forms.Padding(0);
             this.dollar_txtedit.Name = "dollar_txtedit";
             this.dollar_txtedit.Size = new System.Drawing.Size(109, 31);
@@ -1262,7 +1242,7 @@
             this.euro_txtedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.euro_txtedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.euro_txtedit.isPassword = false;
-            this.euro_txtedit.Location = new System.Drawing.Point(339, 344);
+            this.euro_txtedit.Location = new System.Drawing.Point(377, 238);
             this.euro_txtedit.Margin = new System.Windows.Forms.Padding(0);
             this.euro_txtedit.Name = "euro_txtedit";
             this.euro_txtedit.Size = new System.Drawing.Size(109, 31);
@@ -1275,7 +1255,7 @@
             this.ll2.BackColor = System.Drawing.Color.Transparent;
             this.ll2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.ll2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ll2.Location = new System.Drawing.Point(451, 352);
+            this.ll2.Location = new System.Drawing.Point(489, 246);
             this.ll2.Name = "ll2";
             this.ll2.Size = new System.Drawing.Size(34, 20);
             this.ll2.TabIndex = 31;
@@ -1287,7 +1267,7 @@
             this.ll1.BackColor = System.Drawing.Color.Transparent;
             this.ll1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.ll1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ll1.Location = new System.Drawing.Point(451, 293);
+            this.ll1.Location = new System.Drawing.Point(489, 187);
             this.ll1.Name = "ll1";
             this.ll1.Size = new System.Drawing.Size(34, 20);
             this.ll1.TabIndex = 30;
@@ -1300,7 +1280,7 @@
             this.startup_switch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startup_switch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.startup_switch.ForeColor = System.Drawing.Color.White;
-            this.startup_switch.Location = new System.Drawing.Point(371, 191);
+            this.startup_switch.Location = new System.Drawing.Point(409, 85);
             this.startup_switch.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.startup_switch.Name = "startup_switch";
             this.startup_switch.Oncolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1317,7 +1297,7 @@
             this.euro_price_label.BackColor = System.Drawing.Color.Transparent;
             this.euro_price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.euro_price_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.euro_price_label.Location = new System.Drawing.Point(18, 349);
+            this.euro_price_label.Location = new System.Drawing.Point(56, 243);
             this.euro_price_label.Name = "euro_price_label";
             this.euro_price_label.Size = new System.Drawing.Size(178, 20);
             this.euro_price_label.TabIndex = 26;
@@ -1329,7 +1309,7 @@
             this.dollar_price_label.BackColor = System.Drawing.Color.Transparent;
             this.dollar_price_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.dollar_price_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dollar_price_label.Location = new System.Drawing.Point(18, 296);
+            this.dollar_price_label.Location = new System.Drawing.Point(56, 190);
             this.dollar_price_label.Name = "dollar_price_label";
             this.dollar_price_label.Size = new System.Drawing.Size(189, 20);
             this.dollar_price_label.TabIndex = 25;
@@ -1341,92 +1321,11 @@
             this.startup_label.BackColor = System.Drawing.Color.Transparent;
             this.startup_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.startup_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.startup_label.Location = new System.Drawing.Point(17, 191);
+            this.startup_label.Location = new System.Drawing.Point(55, 85);
             this.startup_label.Name = "startup_label";
             this.startup_label.Size = new System.Drawing.Size(291, 20);
             this.startup_label.TabIndex = 24;
             this.startup_label.Text = "⫸ Start STSM when windows start :";
-            // 
-            // lang_setting_label
-            // 
-            this.lang_setting_label.AutoSize = true;
-            this.lang_setting_label.BackColor = System.Drawing.Color.Transparent;
-            this.lang_setting_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lang_setting_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_setting_label.Location = new System.Drawing.Point(17, 93);
-            this.lang_setting_label.Name = "lang_setting_label";
-            this.lang_setting_label.Size = new System.Drawing.Size(117, 20);
-            this.lang_setting_label.TabIndex = 22;
-            this.lang_setting_label.Text = "⫸ Language :";
-            // 
-            // lang_btn
-            // 
-            this.lang_btn.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.Appearance.BackColor2 = System.Drawing.Color.SkyBlue;
-            this.lang_btn.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lang_btn.Appearance.Options.UseBackColor = true;
-            this.lang_btn.Appearance.Options.UseFont = true;
-            this.lang_btn.Appearance.Options.UseForeColor = true;
-            this.lang_btn.AppearanceDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearanceDisabled.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearanceDisabled.BorderColor = System.Drawing.Color.MintCream;
-            this.lang_btn.AppearanceDisabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearanceDisabled.Options.UseBackColor = true;
-            this.lang_btn.AppearanceDisabled.Options.UseBorderColor = true;
-            this.lang_btn.AppearanceDisabled.Options.UseFont = true;
-            this.lang_btn.AppearanceDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearanceDropDown.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearanceDropDown.BorderColor = System.Drawing.Color.White;
-            this.lang_btn.AppearanceDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearanceDropDown.Options.UseBackColor = true;
-            this.lang_btn.AppearanceDropDown.Options.UseBorderColor = true;
-            this.lang_btn.AppearanceDropDown.Options.UseFont = true;
-            this.lang_btn.AppearanceDropDownDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearanceDropDownDisabled.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearanceDropDownDisabled.BorderColor = System.Drawing.Color.MintCream;
-            this.lang_btn.AppearanceDropDownDisabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearanceDropDownDisabled.ForeColor = System.Drawing.Color.Black;
-            this.lang_btn.AppearanceDropDownDisabled.Options.UseBackColor = true;
-            this.lang_btn.AppearanceDropDownDisabled.Options.UseBorderColor = true;
-            this.lang_btn.AppearanceDropDownDisabled.Options.UseFont = true;
-            this.lang_btn.AppearanceDropDownDisabled.Options.UseForeColor = true;
-            this.lang_btn.AppearanceDropDownHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearanceDropDownHovered.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearanceDropDownHovered.BorderColor = System.Drawing.Color.White;
-            this.lang_btn.AppearanceDropDownHovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearanceDropDownHovered.Options.UseBackColor = true;
-            this.lang_btn.AppearanceDropDownHovered.Options.UseBorderColor = true;
-            this.lang_btn.AppearanceDropDownHovered.Options.UseFont = true;
-            this.lang_btn.AppearanceDropDownPressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearanceDropDownPressed.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearanceDropDownPressed.BorderColor = System.Drawing.Color.MintCream;
-            this.lang_btn.AppearanceDropDownPressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearanceDropDownPressed.Options.UseBackColor = true;
-            this.lang_btn.AppearanceDropDownPressed.Options.UseBorderColor = true;
-            this.lang_btn.AppearanceDropDownPressed.Options.UseFont = true;
-            this.lang_btn.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearanceHovered.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearanceHovered.BorderColor = System.Drawing.Color.White;
-            this.lang_btn.AppearanceHovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearanceHovered.Options.UseBackColor = true;
-            this.lang_btn.AppearanceHovered.Options.UseBorderColor = true;
-            this.lang_btn.AppearanceHovered.Options.UseFont = true;
-            this.lang_btn.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lang_btn.AppearancePressed.BackColor2 = System.Drawing.Color.Aqua;
-            this.lang_btn.AppearancePressed.BorderColor = System.Drawing.Color.White;
-            this.lang_btn.AppearancePressed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lang_btn.AppearancePressed.Options.UseBackColor = true;
-            this.lang_btn.AppearancePressed.Options.UseBorderColor = true;
-            this.lang_btn.AppearancePressed.Options.UseFont = true;
-            this.lang_btn.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.SplitButton;
-            this.lang_btn.DropDownControl = this.lang_popup;
-            this.lang_btn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("lang_btn.ImageOptions.Image")));
-            this.lang_btn.Location = new System.Drawing.Point(318, 88);
-            this.lang_btn.Name = "lang_btn";
-            this.lang_btn.Size = new System.Drawing.Size(153, 35);
-            this.lang_btn.TabIndex = 21;
-            this.lang_btn.Text = "...";
             // 
             // lang_popup
             // 
@@ -1587,8 +1486,7 @@
             // gc3
             // 
             this.gc3.AllowTouchScroll = true;
-            this.gc3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gc3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gc3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc3.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc3.Appearance.Options.UseBackColor = true;
@@ -1615,11 +1513,11 @@
             this.gc3.Controls.Add(this.note_disable_enable_all);
             this.gc3.Controls.Add(this.manage_note);
             this.gc3.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.gc3.Location = new System.Drawing.Point(2582, 351);
+            this.gc3.Location = new System.Drawing.Point(920, 358);
             this.gc3.Margin = new System.Windows.Forms.Padding(0);
             this.gc3.Name = "gc3";
             this.gc3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gc3.Size = new System.Drawing.Size(479, 1128);
+            this.gc3.Size = new System.Drawing.Size(700, 300);
             this.gc3.TabIndex = 20;
             this.gc3.Text = "Notes";
             // 
@@ -1648,14 +1546,14 @@
             this.note_clear_all.IconVisible = true;
             this.note_clear_all.IconZoom = 90D;
             this.note_clear_all.IsTab = false;
-            this.note_clear_all.Location = new System.Drawing.Point(24, 219);
+            this.note_clear_all.Location = new System.Drawing.Point(124, 210);
             this.note_clear_all.Margin = new System.Windows.Forms.Padding(0);
             this.note_clear_all.Name = "note_clear_all";
             this.note_clear_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.note_clear_all.OnHovercolor = System.Drawing.Color.Blue;
             this.note_clear_all.OnHoverTextColor = System.Drawing.Color.Aqua;
             this.note_clear_all.selected = false;
-            this.note_clear_all.Size = new System.Drawing.Size(710, 51);
+            this.note_clear_all.Size = new System.Drawing.Size(451, 50);
             this.note_clear_all.TabIndex = 27;
             this.note_clear_all.Text = "Clear All";
             this.note_clear_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1688,14 +1586,14 @@
             this.note_disable_enable_all.IconVisible = true;
             this.note_disable_enable_all.IconZoom = 90D;
             this.note_disable_enable_all.IsTab = false;
-            this.note_disable_enable_all.Location = new System.Drawing.Point(24, 136);
+            this.note_disable_enable_all.Location = new System.Drawing.Point(124, 135);
             this.note_disable_enable_all.Margin = new System.Windows.Forms.Padding(0);
             this.note_disable_enable_all.Name = "note_disable_enable_all";
             this.note_disable_enable_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.note_disable_enable_all.OnHovercolor = System.Drawing.Color.Blue;
             this.note_disable_enable_all.OnHoverTextColor = System.Drawing.Color.Aqua;
             this.note_disable_enable_all.selected = false;
-            this.note_disable_enable_all.Size = new System.Drawing.Size(710, 51);
+            this.note_disable_enable_all.Size = new System.Drawing.Size(451, 50);
             this.note_disable_enable_all.TabIndex = 26;
             this.note_disable_enable_all.Text = "Disable All";
             this.note_disable_enable_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1728,14 +1626,14 @@
             this.manage_note.IconVisible = true;
             this.manage_note.IconZoom = 90D;
             this.manage_note.IsTab = false;
-            this.manage_note.Location = new System.Drawing.Point(24, 53);
+            this.manage_note.Location = new System.Drawing.Point(124, 56);
             this.manage_note.Margin = new System.Windows.Forms.Padding(0);
             this.manage_note.Name = "manage_note";
             this.manage_note.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.manage_note.OnHovercolor = System.Drawing.Color.Blue;
             this.manage_note.OnHoverTextColor = System.Drawing.Color.Aqua;
             this.manage_note.selected = false;
-            this.manage_note.Size = new System.Drawing.Size(710, 51);
+            this.manage_note.Size = new System.Drawing.Size(451, 50);
             this.manage_note.TabIndex = 25;
             this.manage_note.Text = "Manage Notes";
             this.manage_note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1746,8 +1644,7 @@
             // gc2
             // 
             this.gc2.AllowTouchScroll = true;
-            this.gc2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gc2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gc2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc2.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc2.Appearance.Options.UseBackColor = true;
@@ -1774,11 +1671,11 @@
             this.gc2.Controls.Add(this.pro_clear_all);
             this.gc2.Controls.Add(this.pro_manage);
             this.gc2.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.gc2.Location = new System.Drawing.Point(2582, 0);
+            this.gc2.Location = new System.Drawing.Point(920, 45);
             this.gc2.Margin = new System.Windows.Forms.Padding(0);
             this.gc2.Name = "gc2";
             this.gc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gc2.Size = new System.Drawing.Size(478, 1136);
+            this.gc2.Size = new System.Drawing.Size(700, 300);
             this.gc2.TabIndex = 19;
             this.gc2.Text = "Promotions";
             // 
@@ -1807,14 +1704,14 @@
             this.pro_disable_enable_all.IconVisible = true;
             this.pro_disable_enable_all.IconZoom = 90D;
             this.pro_disable_enable_all.IsTab = false;
-            this.pro_disable_enable_all.Location = new System.Drawing.Point(25, 155);
+            this.pro_disable_enable_all.Location = new System.Drawing.Point(124, 129);
             this.pro_disable_enable_all.Margin = new System.Windows.Forms.Padding(0);
             this.pro_disable_enable_all.Name = "pro_disable_enable_all";
             this.pro_disable_enable_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pro_disable_enable_all.OnHovercolor = System.Drawing.Color.Blue;
             this.pro_disable_enable_all.OnHoverTextColor = System.Drawing.Color.Aqua;
             this.pro_disable_enable_all.selected = false;
-            this.pro_disable_enable_all.Size = new System.Drawing.Size(707, 51);
+            this.pro_disable_enable_all.Size = new System.Drawing.Size(450, 50);
             this.pro_disable_enable_all.TabIndex = 25;
             this.pro_disable_enable_all.Text = "Disable All";
             this.pro_disable_enable_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1847,14 +1744,14 @@
             this.pro_clear_all.IconVisible = true;
             this.pro_clear_all.IconZoom = 90D;
             this.pro_clear_all.IsTab = false;
-            this.pro_clear_all.Location = new System.Drawing.Point(25, 238);
+            this.pro_clear_all.Location = new System.Drawing.Point(124, 206);
             this.pro_clear_all.Margin = new System.Windows.Forms.Padding(0);
             this.pro_clear_all.Name = "pro_clear_all";
             this.pro_clear_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pro_clear_all.OnHovercolor = System.Drawing.Color.Blue;
             this.pro_clear_all.OnHoverTextColor = System.Drawing.Color.Aqua;
             this.pro_clear_all.selected = false;
-            this.pro_clear_all.Size = new System.Drawing.Size(707, 51);
+            this.pro_clear_all.Size = new System.Drawing.Size(450, 50);
             this.pro_clear_all.TabIndex = 24;
             this.pro_clear_all.Text = "Clear All";
             this.pro_clear_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1887,19 +1784,66 @@
             this.pro_manage.IconVisible = true;
             this.pro_manage.IconZoom = 90D;
             this.pro_manage.IsTab = false;
-            this.pro_manage.Location = new System.Drawing.Point(25, 72);
+            this.pro_manage.Location = new System.Drawing.Point(124, 56);
             this.pro_manage.Margin = new System.Windows.Forms.Padding(0);
             this.pro_manage.Name = "pro_manage";
             this.pro_manage.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pro_manage.OnHovercolor = System.Drawing.Color.Blue;
             this.pro_manage.OnHoverTextColor = System.Drawing.Color.Aqua;
             this.pro_manage.selected = false;
-            this.pro_manage.Size = new System.Drawing.Size(707, 51);
+            this.pro_manage.Size = new System.Drawing.Size(450, 50);
             this.pro_manage.TabIndex = 22;
             this.pro_manage.Text = "Manage Promotions";
             this.pro_manage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pro_manage.Textcolor = System.Drawing.Color.White;
             this.pro_manage.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.pro_manage.Click += new System.EventHandler(this.pro_manage_Click);
+            // 
+            // barcode_clm
+            // 
+            this.barcode_clm.HeaderText = "Barcode";
+            this.barcode_clm.Name = "barcode_clm";
+            this.barcode_clm.ReadOnly = true;
+            this.barcode_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.barcode_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // productName_clm
+            // 
+            this.productName_clm.HeaderText = "Product Name";
+            this.productName_clm.Name = "productName_clm";
+            this.productName_clm.ReadOnly = true;
+            this.productName_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.productName_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // price_clm
+            // 
+            this.price_clm.HeaderText = "Price";
+            this.price_clm.Name = "price_clm";
+            this.price_clm.ReadOnly = true;
+            this.price_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.price_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // quantity_clm
+            // 
+            this.quantity_clm.HeaderText = "Quantity";
+            this.quantity_clm.Name = "quantity_clm";
+            this.quantity_clm.ReadOnly = true;
+            this.quantity_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.quantity_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // total_clm
+            // 
+            this.total_clm.HeaderText = "Total";
+            this.total_clm.Name = "total_clm";
+            this.total_clm.ReadOnly = true;
+            this.total_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.total_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // productId_clm
+            // 
+            this.productId_clm.HeaderText = "Product_ID";
+            this.productId_clm.Name = "productId_clm";
+            this.productId_clm.ReadOnly = true;
             // 
             // MainMenu
             // 
@@ -1966,7 +1910,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton pro_clear_all;
         private Bunifu.Framework.UI.BunifuFlatButton pro_manage;
         private Bunifu.Framework.UI.BunifuFlatButton pro_disable_enable_all;
-        private DevExpress.XtraEditors.DropDownButton lang_btn;
         private DevExpress.XtraBars.PopupMenu lang_popup;
         private DevExpress.XtraBars.BarButtonItem langitem2;
         private DevExpress.XtraBars.BarButtonItem langitem1;
@@ -1976,7 +1919,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private System.Windows.Forms.Label lang_setting_label;
         private System.Windows.Forms.Label startup_label;
         private System.Windows.Forms.Label euro_price_label;
         private System.Windows.Forms.Label dollar_price_label;
@@ -2002,14 +1944,6 @@
         public Bunifu.Framework.UI.BunifuMetroTextbox usdTextBox;
         public Bunifu.Framework.UI.BunifuMetroTextbox lebanesePoundsTextBox;
         private Bunifu.Framework.UI.BunifuFlatButton holdOrders_btn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcode_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productName_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productId_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderId_clm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderDate_clm;
         private Bunifu.Framework.UI.BunifuFlatButton return_btn;
         private Bunifu.Framework.UI.BunifuFlatButton change_quantity;
         private Bunifu.Framework.UI.BunifuFlatButton sales_back;
@@ -2017,6 +1951,12 @@
         private Bunifu.Framework.UI.BunifuSwitch return_switch;
         private System.Windows.Forms.Label return_access_label;
         private Bunifu.Framework.UI.BunifuFlatButton hold_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barcode_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productId_clm;
     }
 }
 
