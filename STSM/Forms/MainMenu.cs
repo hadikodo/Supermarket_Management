@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Win32;
+using System.Threading;
 
 namespace STSM
 {
@@ -15,20 +16,16 @@ namespace STSM
         Settings sett = new Settings();
         public static string totalAmount = "0";
         public static DataTable finalDataTable = new DataTable();
-        public static int holdMode = 0;
         public static int isHeldOrder = 0;
         public static int heldOrderId = 0;
 
         public MainMenu()
         {
             InitializeComponent();
-        }
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
             checkOut_btn.Hide();
+            product_label.Text = "Product Name";
             dataview_main.ReadOnly = true;
             this.WindowState = FormWindowState.Maximized;
-            home_btn_Click(home_btn, e);
             gc1.Visible = false;
             gc2.Visible = false;
             gc3.Visible = false;
@@ -68,6 +65,10 @@ namespace STSM
             usdTextBox.Enabled = false;
             lebanesePoundsTextBox.Enabled = false;
             barcode_bar.Focus();
+        }
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Exit_btn_Click(object sender, EventArgs e)
@@ -112,6 +113,8 @@ namespace STSM
             gc3.Visible = false;
             sales_btn.Location = new Point(0, 90);
             barcode_bar.Focus();
+            finalDataTable.Columns.Clear();
+            product_label.Text = "Product Name";
         }
 
         private void receipt_btn_Click(object sender, EventArgs e)
@@ -236,7 +239,7 @@ namespace STSM
             gc1.Visible = false;
             gc2.Visible = false;
             gc3.Visible = false;
-            newSale_btn.Location = new Point(0,0);
+            newSale_btn.Location = new Point(0, 0);
             barcode_bar.Focus();
         }
         private void sales_back_Click(object sender, EventArgs e)
@@ -265,6 +268,7 @@ namespace STSM
                             row.Cells[3].Value = qty;
                             itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) + 1).ToString();
                             row.Cells[4].Value = qty * float.Parse(row.Cells[2].Value.ToString());
+                            product_label.Text = row.Cells[1].Value.ToString();
                             alreadyExits = 1;
                             float totalPrice = 0;
 
@@ -290,6 +294,7 @@ namespace STSM
                     {
                         float totalPrice = 0;
                         dataview_main.Rows.Add(dr[0]["Barcode"], dr[0]["ProductName"], dr[0]["Sell_Price"], 1, dr[0]["Sell_Price"], dr[0]["P_ID"]);
+                        product_label.Text = dr[0]["ProductName"].ToString();
                         foreach (DataGridViewRow row2 in dataview_main.Rows)
                         {
                             if (!(row2.Cells[0].Value == null || row2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row2.Cells[0].Value.ToString())))
@@ -301,12 +306,16 @@ namespace STSM
                         }
                         itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) + 1).ToString();
                         lebanesePoundsTextBox.Text = totalPrice.ToString();
-                        usdTextBox.Text = (totalPrice / 1520).ToString();
+                        usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
                         totalAmount = totalPrice.ToString();
                     }
                     else
                     { MessageBox.Show("Please enter a valid barcode"); }
                 }
+                dal.cnOpen();
+                SqlCommand cmd1 = new SqlCommand("Update Orders set Total_Price = " + totalAmount + " where O_ID = " + Globals.currentOID, dal.getConnection());
+                cmd1.ExecuteNonQuery();
+                dal.cnClose();
             }
             else
             {
@@ -336,11 +345,14 @@ namespace STSM
                     }
                 }
                 new CheckoutInterface().ShowDialog();
-                newSale_btn.Location = new Point(0, 90);
-                sales_btn.Location = new Point(0, 90);
-                sales_btn.Enabled = true;
-                newSale_btn.Text = "New Sale";
-                home_btn_Click(home_btn, e);
+                if (Globals.isCheckCancelled == false)
+                {
+                    newSale_btn.Location = new Point(0, 90);
+                    sales_btn.Location = new Point(0, 90);
+                    sales_btn.Enabled = true;
+                    newSale_btn.Text = "New Sale";
+                    home_btn_Click(home_btn, e);
+                }
             }
             else
                 MessageBox.Show("Please Add At Least One Item !");
@@ -355,6 +367,31 @@ namespace STSM
 
         private void NewSale_btn_Click(object sender, EventArgs e)
         {
+            lebanesePoundsTextBox.Text = "0";
+            usdTextBox.Text = "0";
+            barcode_bar.Text = "";
+            itemsNumberTextBox.Text = "0";
+            DataAccessLayer dal = new DataAccessLayer();
+            if (!(string.IsNullOrWhiteSpace(lebanesePoundsTextBox.Text)))
+            {
+                dal.cnOpen();
+                SqlCommand cmd1 = new SqlCommand("INSERT INTO Orders (O_Date, Total_Price, U_ID, Active, Hold) VALUES(" + "GETDATE()" + "," + 0 + "," + 3 + "," + 0 + "," + 0 + ")", dal.getConnection());
+                cmd1.ExecuteNonQuery();
+                dal.cnClose();
+                dal.cnOpen();
+                SqlCommand cmd12 = new SqlCommand("SELECT TOP 1 * FROM Orders ORDER BY O_ID DESC", dal.getConnection());
+                SqlDataReader datardr = cmd12.ExecuteReader();
+                while (datardr.Read())
+                {
+                    Globals.currentOID = Int32.Parse(datardr["O_ID"].ToString());
+                }
+                dal.cnClose();
+            }
+            else
+            {
+                MessageBox.Show("Somthing Went Wrong, Order Can't be Created !!");
+            }
+            barcode_bar.Focus();
             pos_btn.Show();
             change_quantity.Show();
             return_btn.Show();
@@ -368,69 +405,146 @@ namespace STSM
             dataview_main.Show();
             order_info.Show();
             checkOut_btn.Show();
-            holdMode = 0;
+            addItem_btn.Show();
             dataview_main.Rows.Clear();
-            //dataview_main.Columns["orderId_clm"].Visible = false;
-            //dataview_main.Columns["orderDate_clm"].Visible = false;
+            dataview_main.Columns["orderId_clm"].Visible = false;
+            dataview_main.Columns["open_order_btn"].Visible = false;
+            dataview_main.Columns["open_order_btn"].Visible = false;
+            dataview_main.Columns["orderDate_clm"].Visible = false;
             dataview_main.Columns["barcode_clm"].Visible = true;
             dataview_main.Columns["productId_clm"].Visible = false;
             dataview_main.Columns["price_clm"].Visible = true;
             dataview_main.Columns["total_clm"].Visible = true;
             dataview_main.Columns["quantity_clm"].Visible = true;
             dataview_main.Columns["productName_clm"].Visible = true;
-            lebanesePoundsTextBox.Text = "";
-            usdTextBox.Text = "";
-            barcode_bar.Text = "";
-            itemsNumberTextBox.Text = "0";
             barcode_bar.Focus();
+
         }
 
         private void dataview_main_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int nullRow = 0;
+            foreach (DataGridViewRow row1 in dataview_main.SelectedRows)
+            {
+                if ((row1.Cells["orderId_clm"].Value == null || row1.Cells["orderId_clm"].Value == DBNull.Value || String.IsNullOrWhiteSpace(row1.Cells["orderId_clm"].Value.ToString())))
+                {
+                    nullRow = 1;
+                }
+            }
+            if (nullRow == 0)
+            {
+                if (MessageBox.Show("Do you want to resume the selected order?", "Resume order", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    foreach (DataGridViewRow row5 in dataview_main.SelectedRows)
+                    {
+                        heldOrderId = Int32.Parse(row5.Cells["orderId_clm"].Value.ToString());
+                    }
+                    isHeldOrder = 1;
+                    addItem_btn.Show();
+                    pos_btn.Show();
+                    deleteItem_btn.Show();
+                    order_info.Show();
+                    change_quantity.Show();
+                    newSale_btn.Hide();
+                    checkOut_btn.Show();
+                    hold_btn.Show();
+                    return_btn.Show();
+                    float totalPrice = 0;
+                    int orderId = 0;
+                    foreach (DataGridViewRow row in dataview_main.SelectedRows)
+                    {
+                        orderId = Int32.Parse(row.Cells["orderId_clm"].Value.ToString());
+                    }
+                    dataview_main.Rows.Clear();
+                    dataview_main.Columns["orderId_clm"].Visible = false;
+                    dataview_main.Columns["orderDate_clm"].Visible = false;
+                    dataview_main.Columns["open_order_btn"].Visible = false;
+                    dataview_main.Columns["barcode_clm"].Visible = true;
+                    dataview_main.Columns["productId_clm"].Visible = false;
+                    dataview_main.Columns["price_clm"].Visible = true;
+                    dataview_main.Columns["total_clm"].Visible = true;
+                    dataview_main.Columns["quantity_clm"].Visible = true;
+                    dataview_main.Columns["productName_clm"].Visible = true;
+                    DataAccessLayer dal = new DataAccessLayer();
+                    Globals.currentOID = orderId;
+                    dal.cnOpen();
+                    dal.inholdOrder(orderId);
+                    dal.cnClose();
+                    DataTable dt = new DataTable();
+                    dal.cnOpen();
+                    SqlDataAdapter sa = new SqlDataAdapter("SELECT Products.Barcode,Products.ProductName,Products.Sell_Price,Orders_Details.QTE,Orders_Details.Total_Price,Products.P_ID FROM Orders_Details INNER JOIN Products ON Orders_Details.P_ID=Products.P_ID WHERE Orders_Details.O_ID=" + orderId + ";", dal.getConnection());
+                    sa.Fill(dt);
+                    DataRow[] dr = dt.Select();
+                    dal.cnClose();
+                    foreach (DataRow row2 in dr)
+                    {
+                        dataview_main.Rows.Add(row2[0].ToString(), row2[1].ToString(), row2[2].ToString(), row2[3].ToString(), row2[4].ToString(), row2[5].ToString());
+                        totalPrice += float.Parse(row2[4].ToString());
+                        itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) + 1).ToString();
+                    }
+                    lebanesePoundsTextBox.Text = totalPrice.ToString();
+                    usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
+                    totalAmount = totalPrice.ToString();
+                }
+            }
+            gc1.Visible = false;
+            gc2.Visible = false;
+            gc3.Visible = false;
+            barcode_bar.Focus();
         }
 
         private void deleteItem_btn_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.dataview_main.SelectedRows)
+            if (dataview_main.SelectedRows.Count >= 1)
             {
-                if (!(item.Cells[0].Value == null || item.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(item.Cells[0].Value.ToString())))
+                Globals.currentQte = Int32.Parse(dataview_main.CurrentRow.Cells[3].Value.ToString());
+                DeleteItemForm dif = new DeleteItemForm();
+                dif.ShowDialog();
+                foreach (DataGridViewRow item in this.dataview_main.SelectedRows)
                 {
-                    if (Int32.Parse(item.Cells[3].Value.ToString()) == 1)
+                    if (!(item.Cells[0].Value == null || item.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(item.Cells[0].Value.ToString())))
                     {
-                        dataview_main.Rows.RemoveAt(item.Index);
-                        itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) - 1).ToString();
-                        float totalPrice = 0;
-                        foreach (DataGridViewRow row2 in dataview_main.Rows)
+                        if (Int32.Parse(item.Cells[3].Value.ToString()) == Globals.nbDeleted)
                         {
-                            if (!(row2.Cells[0].Value == null || row2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row2.Cells[0].Value.ToString())))
+                            dataview_main.Rows.RemoveAt(item.Index);
+                            float totalPrice = 0;
+                            foreach (DataGridViewRow row2 in dataview_main.Rows)
                             {
-                                totalPrice += float.Parse(row2.Cells[4].Value.ToString());
+                                if (!(row2.Cells[0].Value == null || row2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row2.Cells[0].Value.ToString())))
+                                {
+                                    totalPrice +=float.Parse(row2.Cells[4].Value.ToString());
+                                }
                             }
+                            lebanesePoundsTextBox.Text = totalPrice.ToString();
+                            usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
+                            totalAmount = totalPrice.ToString();
                         }
-                        lebanesePoundsTextBox.Text = totalPrice.ToString();
-                        usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
-                        totalAmount = totalPrice.ToString();
-                    }
-                    else
-                    {
-                        item.Cells[3].Value = (Int32.Parse(item.Cells[3].Value.ToString()) - 1);
-                        item.Cells[4].Value = (Int32.Parse(item.Cells[3].Value.ToString())) * float.Parse(item.Cells[2].Value.ToString());
-                        float totalPrice = 0;
-                        foreach (DataGridViewRow row2 in dataview_main.Rows)
+                        else
                         {
-                            if (!(row2.Cells[0].Value == null || row2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row2.Cells[0].Value.ToString())))
+                            item.Cells[3].Value = (Int32.Parse(item.Cells[3].Value.ToString()) - Globals.nbDeleted);
+                            item.Cells[4].Value = (Int32.Parse(item.Cells[3].Value.ToString())) * float.Parse(item.Cells[2].Value.ToString());
+                            float totalPrice = 0;
+                            foreach (DataGridViewRow row2 in dataview_main.Rows)
                             {
-                                totalPrice += float.Parse(row2.Cells[4].Value.ToString());
+                                if (!(row2.Cells[0].Value == null || row2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row2.Cells[0].Value.ToString())))
+                                {
+                                    totalPrice +=float.Parse(row2.Cells[4].Value.ToString());
+                                }
                             }
+                            lebanesePoundsTextBox.Text = totalPrice.ToString();
+                            usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
+                            totalAmount = totalPrice.ToString();
                         }
-                        lebanesePoundsTextBox.Text = totalPrice.ToString();
-                        usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
-                        totalAmount = totalPrice.ToString();
                     }
                 }
+                itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) - Globals.nbDeleted).ToString();
+                barcode_bar.Focus();
             }
-            barcode_bar.Focus();
+            else
+            {
+                MessageBox.Show("Please Add At Least One Item !");
+                barcode_bar.Focus();
+            }
         }
 
         private void Pos_btn_Click(object sender, EventArgs e)
@@ -439,106 +553,44 @@ namespace STSM
             ps.Show();
         }
 
-        //private void ReturnItems_btn_Click(object sender, EventArgs e)
-        //{
-        //    DataAccessLayer dal = new DataAccessLayer();
-        //    DataRow[] dr = MainMenu.finalDataTable.Select();
-        //    float receivedAmount;
-        //    float totalAmount;
-        //    if (!(string.IsNullOrWhiteSpace(lebanesePoundsTextBox.Text)))
-        //    {
-        //        DataRow drLocal = null;
-        //        foreach (DataGridViewRow dr2 in dataview_main.Rows)
-        //        {
-        //            if (!(dr2.Cells[0].Value == null || dr2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(dr2.Cells[0].Value.ToString())))
-        //            {
-        //                drLocal = finalDataTable.NewRow();
-        //                drLocal["Barcode"] = dr2.Cells["barcode_clm"].Value.ToString();
-        //                drLocal["ProductName"] = dr2.Cells["productName_clm"].Value.ToString();
-        //                drLocal["Price"] = dr2.Cells["price_clm"].Value.ToString();
-        //                drLocal["Quantity"] = dr2.Cells["quantity_clm"].Value.ToString();
-        //                drLocal["Total"] = dr2.Cells["total_clm"].Value.ToString();
-        //                drLocal["P_ID"] = dr2.Cells["productId_clm"].Value.ToString();
-        //                finalDataTable.Rows.Add(drLocal);
-        //            }
-        //        }
-        //        if (MessageBox.Show("You are about to return the scanned items. This will affect the stock database. Are you sure you want to continue?", "Return Items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-        //        {
-        //            totalAmount = float.Parse(lebanesePoundsTextBox.Text.ToString());
-        //            dal.cnOpen();
-        //            SqlCommand cmd1 = new SqlCommand("INSERT INTO Return_r (R_Date, Total_Price, U_ID, Active) VALUES(" + "GETDATE()" + "," + totalAmount + "," + 3 + "," + 0 + ")", dal.getConnection());
-        //            cmd1.ExecuteNonQuery();
-        //            dal.cnClose();
-        //            int oID = 0;
-        //            dal.cnOpen();
-        //            SqlCommand cmd12 = new SqlCommand("SELECT TOP 1 * FROM Return_r ORDER BY R_ID DESC", dal.getConnection());
-        //            SqlDataReader datardr = cmd12.ExecuteReader();
-        //            while (datardr.Read())
-        //            {
-        //                oID = Int32.Parse(datardr["R_ID"].ToString());
-        //            }
-        //            dal.cnClose();
-        //            foreach (DataRow row in MainMenu.finalDataTable.Rows)
-        //            {
-        //                if (row[5].ToString() != "posItem")
-        //                {
-        //                    dal.updateStockById(Int32.Parse(row["P_ID"].ToString()), Int32.Parse(row["Quantity"].ToString()));
-        //                    dal.cnOpen();
-        //                    SqlCommand cmd2 = new SqlCommand("INSERT INTO Return_Details (R_ID, P_ID, QTE, Item_Price,Total_Price) VALUES(" + oID + "," + Int32.Parse(row["P_ID"].ToString()) + "," + Int32.Parse(row["Quantity"].ToString()) + "," + Int32.Parse(row["Price"].ToString()) + "," + Int32.Parse(row["Total"].ToString()) + ")", dal.getConnection());
-        //                    cmd2.ExecuteNonQuery();
-        //                    dal.cnClose();
-        //                }
-        //            }
-        //            MessageBox.Show("Successfully completed return. The items have been added back to the stock.");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Please enter an item to be returned first");
-        //    }
-        //    barcode_bar.Focus();
-        //}
         private void HeldOrders_btn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("This will remove the current content and display a list of orders on hold. Are you sure you want to continue?", "Display held orders", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            addItem_btn.Hide();
+            pos_btn.Hide();
+            hold_btn.Hide();
+            return_btn.Hide();
+            deleteItem_btn.Hide();
+            checkOut_btn.Hide();
+            hold_btn.Hide();
+            return_btn.Hide();
+            holdOrders_btn.Hide();
+            dataview_main.Rows.Clear();
+            lebanesePoundsTextBox.Text = "";
+            usdTextBox.Text = "";
+            barcode_bar.Text = "";
+            itemsNumberTextBox.Text = "0";
+            dataview_main.Visible = true;
+            dataview_main.Columns["orderId_clm"].Visible = true;
+            dataview_main.Columns["orderDate_clm"].Visible = true;
+            dataview_main.Columns["open_order_btn"].Visible = true;
+            dataview_main.Columns["barcode_clm"].Visible = false;
+            dataview_main.Columns["productId_clm"].Visible = false;
+            dataview_main.Columns["price_clm"].Visible = false;
+            dataview_main.Columns["total_clm"].Visible = false;
+            dataview_main.Columns["quantity_clm"].Visible = false;
+            dataview_main.Columns["productName_clm"].Visible = false;
+            DataAccessLayer dal = new DataAccessLayer();
+            DataTable dt = dal.selectAllOrders();
+            DataRow[] dr = dt.Select("Hold=1");
+            if (dr.Length == 0)
             {
-                addItem_btn.Hide();
-                pos_btn.Hide();
-                hold_btn.Hide();
-                return_btn.Hide();
-                deleteItem_btn.Hide();
-                checkOut_btn.Hide();
-                hold_btn.Hide();
-                return_btn.Hide();
-                holdOrders_btn.Hide();
-                holdMode = 1;
-                dataview_main.Rows.Clear();
-                lebanesePoundsTextBox.Text = "";
-                usdTextBox.Text = "";
-                barcode_bar.Text = "";
-                itemsNumberTextBox.Text = "0";
-                dataview_main.Visible = true;
-                dataview_main.Columns["orderId_clm"].Visible = true;
-                dataview_main.Columns["orderDate_clm"].Visible = true;
-                dataview_main.Columns["barcode_clm"].Visible = false;
-                dataview_main.Columns["productId_clm"].Visible = false;
-                dataview_main.Columns["price_clm"].Visible = false;
-                dataview_main.Columns["total_clm"].Visible = false;
-                dataview_main.Columns["quantity_clm"].Visible = false;
-                dataview_main.Columns["productName_clm"].Visible = false;
-                DataAccessLayer dal = new DataAccessLayer();
-                DataTable dt = dal.selectAllOrders();
-                DataRow[] dr = dt.Select("Hold=1");
-                if (dr.Length == 0)
-                {
 
-                }
-                else
+            }
+            else
+            {
+                foreach (DataRow row in dr)
                 {
-                    foreach (DataRow row in dr)
-                    {
-                        dataview_main.Rows.Add(0, 0, 0, 0, 0, 0, row["O_ID"].ToString(), row["O_Date"].ToString());
-                    }
+                    dataview_main.Rows.Add(0, 0, 0, 0, 0, 0, row["O_ID"].ToString(), row["O_Date"].ToString());
                 }
             }
             barcode_bar.Focus();
@@ -546,73 +598,6 @@ namespace STSM
 
         private void Dataview_main_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (holdMode == 1)
-            {
-                int nullRow = 0;
-                foreach (DataGridViewRow row1 in dataview_main.SelectedRows)
-                {
-                    if ((row1.Cells["orderId_clm"].Value == null || row1.Cells["orderId_clm"].Value == DBNull.Value || String.IsNullOrWhiteSpace(row1.Cells["orderId_clm"].Value.ToString())))
-                    {
-                        nullRow = 1;
-                    }
-                }
-                if (nullRow == 0)
-                {
-                    if (MessageBox.Show("Do you want to resume the selected order?", "Resume order", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        foreach (DataGridViewRow row5 in dataview_main.SelectedRows)
-                        {
-                            heldOrderId = Int32.Parse(row5.Cells["orderId_clm"].Value.ToString());
-                        }
-                        isHeldOrder = 1;
-                        addItem_btn.Show();
-                        pos_btn.Show();
-                        deleteItem_btn.Show();
-                        order_info.Show();
-                        change_quantity.Show();
-                        newSale_btn.Hide();
-                        checkOut_btn.Show();
-                        hold_btn.Show();
-                        return_btn.Show();
-                        float totalPrice = 0;
-                        int orderId = 0;
-                        foreach (DataGridViewRow row in dataview_main.SelectedRows)
-                        {
-                            orderId = Int32.Parse(row.Cells["orderId_clm"].Value.ToString());
-                        }
-                        dataview_main.Rows.Clear();
-                        dataview_main.Columns["orderId_clm"].Visible = false;
-                        dataview_main.Columns["orderDate_clm"].Visible = false;
-                        dataview_main.Columns["barcode_clm"].Visible = true;
-                        dataview_main.Columns["productId_clm"].Visible = true;
-                        dataview_main.Columns["price_clm"].Visible = true;
-                        dataview_main.Columns["total_clm"].Visible = true;
-                        dataview_main.Columns["quantity_clm"].Visible = true;
-                        dataview_main.Columns["productName_clm"].Visible = true;
-                        DataAccessLayer dal = new DataAccessLayer();
-                        DataTable dt = new DataTable();
-                        dal.cnOpen();
-                        SqlDataAdapter sa = new SqlDataAdapter("SELECT Products.Barcode,Products.ProductName,Products.Sell_Price,Orders_Details.QTE,Orders_Details.Total_Price,Products.P_ID FROM Orders_Details INNER JOIN Products ON Orders_Details.P_ID=Products.P_ID WHERE Orders_Details.O_ID=" + orderId + ";", dal.getConnection());
-                        sa.Fill(dt);
-                        DataRow[] dr = dt.Select();
-                        dal.cnClose();
-                        foreach (DataRow row2 in dr)
-                        {
-                            dataview_main.Rows.Add(row2[0].ToString(), row2[1].ToString(), row2[2].ToString(), row2[3].ToString(), row2[4].ToString(), row2[5].ToString());
-                            totalPrice += float.Parse(row2[4].ToString());
-                            itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) + 1).ToString();
-                        }
-                        lebanesePoundsTextBox.Text = totalPrice.ToString();
-                        usdTextBox.Text = (totalPrice / 1520).ToString();
-                        totalAmount = totalPrice.ToString();
-                        holdMode = 0;
-                    }
-                }
-            }
-            gc1.Visible = false;
-            gc2.Visible = false;
-            gc3.Visible = false;
-            barcode_bar.Focus();
         }
         private void gc1_Paint(object sender, PaintEventArgs e)
         {
@@ -731,11 +716,37 @@ namespace STSM
                 MessageBox.Show("Please enter an item to be returned first");
             }
             barcode_bar.Focus();
+            home_btn_Click(home_btn, e);
         }
 
         private void change_quantity_Click(object sender, EventArgs e)
         {
-            barcode_bar.Focus();
+            if (dataview_main.SelectedRows.Count >= 1)
+            {
+                ChangeQuantityForm cqf = new ChangeQuantityForm();
+                cqf.newqte_txtbox.Focus();
+                cqf.ShowDialog();
+                barcode_bar.Focus();
+                itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) - Int32.Parse(dataview_main.CurrentRow.Cells[3].Value.ToString()) + Globals.newQte).ToString();
+                dataview_main.CurrentRow.Cells[3].Value = Globals.newQte;
+                dataview_main.CurrentRow.Cells[4].Value = Int32.Parse(dataview_main.CurrentRow.Cells[3].Value.ToString()) * Int32.Parse(dataview_main.CurrentRow.Cells[2].Value.ToString());
+                float totalPrice = 0;
+                foreach (DataGridViewRow row2 in dataview_main.Rows)
+                {
+                    if (!(row2.Cells[0].Value == null || row2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row2.Cells[0].Value.ToString())))
+                    {
+                        totalPrice += float.Parse(row2.Cells[4].Value.ToString());
+                    }
+                }
+                lebanesePoundsTextBox.Text = totalPrice.ToString();
+                usdTextBox.Text = (totalPrice / Int32.Parse(dollar_txtedit.Text)).ToString();
+                totalAmount = totalPrice.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please Add At Least One Item !");
+                barcode_bar.Focus();
+            }
         }
 
         private void usdTextBox_OnValueChanged(object sender, EventArgs e)
@@ -756,36 +767,25 @@ namespace STSM
         private void hold_btn_Click(object sender, EventArgs e)
         {
             DataAccessLayer dal = new DataAccessLayer();
-            float receivedAmount;
             float totalAmount;
+            dal.cnOpen();
+            dal.removeOrderDetailsByID(Globals.currentOID);
             if (!(string.IsNullOrWhiteSpace(lebanesePoundsTextBox.Text)))
             {
                 totalAmount = float.Parse(lebanesePoundsTextBox.Text.ToString());
-                dal.cnOpen();
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO Orders (O_Date, Total_Price, U_ID, Active, Hold) VALUES(" + "GETDATE()" + "," + totalAmount + "," + 3 + "," + 0 + "," + 1 + ")", dal.getConnection());
-                cmd1.ExecuteNonQuery();
-                dal.cnClose();
-                int oID = 0;
-                dal.cnOpen();
-                SqlCommand cmd12 = new SqlCommand("SELECT TOP 1 * FROM Orders ORDER BY O_ID DESC", dal.getConnection());
-                SqlDataReader datardr = cmd12.ExecuteReader();
-                while (datardr.Read())
-                {
-                    oID = Int32.Parse(datardr["O_ID"].ToString());
-                }
-                dal.cnClose();
                 foreach (DataGridViewRow row in dataview_main.Rows)
                 {
                     if (!(row.Cells[0].Value == null || row.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(row.Cells[0].Value.ToString())))
                     {
-                        dal.cnOpen();
-                        SqlCommand cmd2 = new SqlCommand("INSERT INTO Orders_Details (O_ID, P_ID, QTE, Item_Price,Total_Price) VALUES(" + oID + "," + Int32.Parse(row.Cells["productId_clm"].Value.ToString()) + "," + Int32.Parse(row.Cells["quantity_clm"].Value.ToString()) + "," + Int32.Parse(row.Cells["price_clm"].Value.ToString()) + "," + Int32.Parse(row.Cells["total_clm"].Value.ToString()) + ")", dal.getConnection());
-                        cmd2.ExecuteNonQuery();
-                        dal.cnClose();
+                        dal.addOrderDetails(Globals.currentOID, Int32.Parse(row.Cells["productId_clm"].Value.ToString()), Int32.Parse(row.Cells["quantity_clm"].Value.ToString()), Int32.Parse(row.Cells["price_clm"].Value.ToString()), Int32.Parse(row.Cells["total_clm"].Value.ToString()));
                     }
                 }
+                dal.holdOrder(Globals.currentOID);
+                Globals.isHold = false;
                 MessageBox.Show("Order has been placed on hold.");
                 home_btn_Click(home_btn, e);
+                sales_btn_Click(sales_btn, e);
+                HeldOrders_btn_Click(holdOrders_btn, e);
             }
             else
             {
@@ -797,6 +797,28 @@ namespace STSM
         private void pro_manage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataview_main_Cell_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                product_label.Text = dataview_main.SelectedRows[0].Cells[1].Value.ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void OnPressKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = e.SuppressKeyPress = true;
+                Button1_Click(addItem_btn, e);
+            }
         }
     }
 }

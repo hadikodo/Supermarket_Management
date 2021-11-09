@@ -24,7 +24,14 @@ namespace STSM.Classes
         private  SqlDataReader dr;
         public void cnOpen()
         {
-            sqlconn.Open();
+            try
+            {
+                sqlconn.Open();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public void cnClose()
@@ -657,6 +664,40 @@ namespace STSM.Classes
              
         }
 
+        public void holdOrder(int id)
+        {
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("sp_set_order_hold", sqlconn);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@order_id", id);
+            dr = com.ExecuteReader();
+            dr.Close();
+        }
+
+        public void inholdOrder(int id)
+        {
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("sp_set_order_inhold", sqlconn);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@order_id", id);
+            dr = com.ExecuteReader();
+            dr.Close();
+        }
+
+        public Boolean isHolded(int id)
+        {
+            Boolean res;
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("select dbo.isHold(@order_id)", sqlconn);
+            com.Parameters.AddWithValue("@order_id", id);
+            res = (bool)com.ExecuteScalar();
+            return res;
+        }
+
+
         public DataTable selectAllOrdersforUserId(int Uid)
         {
             DataAccessLayer copen = new DataAccessLayer();
@@ -705,18 +746,55 @@ namespace STSM.Classes
 
         ////////////////////////////////////////Order_Details Methods//////////////////////////////////////
 
-        public void addOrderDetails(int Oid,int Pid,int qte)
+        public void addOrderDetails(int Oid,int Pid,int qte,int item_price,int total_price)
         {
             DataAccessLayer copen = new DataAccessLayer();
             copen.cnOpen();
-            com = new SqlCommand("add_orders_details", sqlconn);
+            com = new SqlCommand("sp_AddOrderDetails", sqlconn);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@order_id", Oid);
+            com.Parameters.AddWithValue("@p_id", Pid);
+            com.Parameters.AddWithValue("@qte", qte);
+            com.Parameters.AddWithValue("@item_p", item_price);
+            com.Parameters.AddWithValue("@total_price", total_price);
+            dr = com.ExecuteReader();
+            dr.Close();  
+        }
+
+        public void updateQteOrderDetails(int Oid, int Pid, int qte)
+        {
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("sp_updateQteOrderDetails", sqlconn);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.AddWithValue("@o_id", Oid);
             com.Parameters.AddWithValue("@p_id", Pid);
             com.Parameters.AddWithValue("@qte", qte);
             dr = com.ExecuteReader();
             dr.Close();
-             
+        }
+
+        public Boolean checkIfOrderDetailsExist(int o_id, int p_id)
+        {
+            Boolean res;
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("select dbo.checkIfOrderDetailsExist(@o_id,@p_id)", sqlconn);
+            com.Parameters.AddWithValue("@o_id", o_id);
+            com.Parameters.AddWithValue("@p_id", p_id);
+            res = (bool)com.ExecuteScalar();
+            return res;
+        }
+
+        public void removeOrderDetailsByID(int Oid)
+        {
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("sp_removeOrderDetailsByID", sqlconn);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@order_id", Oid);
+            dr = com.ExecuteReader();
+            dr.Close();
         }
 
         public DataTable selectOrderDetailsForProduct(int Odid)

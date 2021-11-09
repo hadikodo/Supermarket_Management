@@ -11,9 +11,9 @@ namespace STSM.Classes
     {
         DataAccessLayer dal = new DataAccessLayer();
 
-        public void add_Order_Details(int Order_Id,int Product_Id,int quantity)
+        public void add_Order_Details(int Order_Id,int Product_Id,int quantity,int item_price,int total_price)
         {
-            dal.addOrderDetails(Order_Id,Product_Id,quantity);
+            dal.addOrderDetails(Order_Id,Product_Id,quantity,item_price,total_price);
         }
         public DataTable select_Order_Details_For_Product(int Product_Id)
         {

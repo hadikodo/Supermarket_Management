@@ -13,7 +13,7 @@ using System.Data;
 
 namespace STSM.Forms
 {
-    public partial class CheckoutInterface : Form
+    public partial class CheckoutInterface : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
 
         public CheckoutInterface()
@@ -33,6 +33,7 @@ namespace STSM.Forms
 
         private void BunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            Globals.isCheckCancelled = true;
             this.Hide();
         }
 
@@ -43,6 +44,7 @@ namespace STSM.Forms
 
         private void NewSale_btn_Click(object sender, EventArgs e)
         {
+            Globals.isCheckCancelled = false;
             DataAccessLayer dal = new DataAccessLayer();
             DataRow[] dr = MainMenu.finalDataTable.Select();
             float receivedAmount=0, totalAmount;
@@ -83,33 +85,23 @@ namespace STSM.Forms
                 exitCheckout.Show();
             }
             dal.cnOpen();
-            SqlCommand cmd1 = new SqlCommand("INSERT INTO Orders (O_Date, Total_Price, U_ID, Active, Hold) VALUES(" + "GETDATE()" + "," + totalAmount + "," + 3 + "," + 0 + "," + 0 + ")", dal.getConnection());
+            SqlCommand cmd1 = new SqlCommand("Update Orders set Total_Price = "+totalAmount+" where O_ID = "+Globals.currentOID, dal.getConnection());
             cmd1.ExecuteNonQuery();
-            dal.cnClose();
-            int oID = 0;
-            dal.cnOpen();
-            SqlCommand cmd12 = new SqlCommand("SELECT TOP 1 * FROM Orders ORDER BY O_ID DESC", dal.getConnection());
-            SqlDataReader datardr = cmd12.ExecuteReader();
-            while (datardr.Read())
-            {
-                oID = Int32.Parse(datardr["O_ID"].ToString());
-            }
-            datardr.Close();
             dal.cnClose();
             foreach (DataRow row in MainMenu.finalDataTable.Rows)
             {
                 if (row[5].ToString() != "posItem")
                 {
-                    dal.cnOpen();
                     dal.updateStockById(Int32.Parse(row["P_ID"].ToString()), Int32.Parse(row["Quantity"].ToString()));
-                    dal.cnClose();
                     dal.cnOpen();
-                    SqlCommand cmd2 = new SqlCommand("INSERT INTO Orders_Details (O_ID, P_ID, QTE, Item_Price,Total_Price) VALUES(" + oID + "," + Int32.Parse(row["P_ID"].ToString()) + "," + Int32.Parse(row["Quantity"].ToString()) + "," + Int32.Parse(row["Price"].ToString()) + "," + Int32.Parse(row["Total"].ToString()) + ")", dal.getConnection());
-                    cmd2.ExecuteNonQuery();
+                    if(dal.checkIfOrderDetailsExist(Globals.currentOID, Int32.Parse(row["P_ID"].ToString())))
+                        dal.updateQteOrderDetails(Globals.currentOID, Int32.Parse(row["P_ID"].ToString()), Int32.Parse(row["Quantity"].ToString()));
+                    else
+                        dal.addOrderDetails(Globals.currentOID,Int32.Parse(row["P_ID"].ToString()),Int32.Parse(row["Quantity"].ToString()), Int32.Parse(row["Price"].ToString()),Int32.Parse(row["Total"].ToString()));
                     dal.cnClose();
                 }
             }
-            if (MainMenu.isHeldOrder == 1)
+            /*if (MainMenu.isHeldOrder == 1)
             {
                 dal.cnOpen();
                 SqlCommand cmd9 = new SqlCommand("DELETE FROM Orders_Details WHERE O_ID=" + MainMenu.heldOrderId, dal.getConnection());
@@ -119,7 +111,7 @@ namespace STSM.Forms
                 dal.cnOpen();
                 cmd10.ExecuteNonQuery();
                 dal.cnClose();
-            }
+            }*/
             MainMenu.finalDataTable.Clear();
         }
 

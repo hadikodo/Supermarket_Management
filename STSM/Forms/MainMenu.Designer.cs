@@ -30,9 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Exit_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.about_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.sales_btn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -57,6 +58,15 @@
             this.panel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.addItem_btn = new System.Windows.Forms.Button();
             this.dataview_main = new System.Windows.Forms.DataGridView();
+            this.barcode_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productName_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDate_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.open_order_btn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.order_info = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.total_usd = new System.Windows.Forms.Label();
             this.usd1 = new System.Windows.Forms.Label();
@@ -79,6 +89,14 @@
             this.euro_price_label = new System.Windows.Forms.Label();
             this.dollar_price_label = new System.Windows.Forms.Label();
             this.startup_label = new System.Windows.Forms.Label();
+            this.gc3 = new DevExpress.XtraEditors.GroupControl();
+            this.note_clear_all = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.note_disable_enable_all = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.manage_note = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.gc2 = new DevExpress.XtraEditors.GroupControl();
+            this.pro_disable_enable_all = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pro_clear_all = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pro_manage = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lang_popup = new DevExpress.XtraBars.PopupMenu(this.components);
             this.langitem2 = new DevExpress.XtraBars.BarButtonItem();
             this.langitem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -88,32 +106,18 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gc3 = new DevExpress.XtraEditors.GroupControl();
-            this.note_clear_all = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.note_disable_enable_all = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.manage_note = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.gc2 = new DevExpress.XtraEditors.GroupControl();
-            this.pro_disable_enable_all = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pro_clear_all = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pro_manage = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.barcode_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productName_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataview_main)).BeginInit();
             this.order_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc1)).BeginInit();
             this.gc1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lang_popup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bar_manager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc3)).BeginInit();
             this.gc3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gc2)).BeginInit();
             this.gc2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lang_popup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar_manager1)).BeginInit();
             this.SuspendLayout();
             // 
             // Exit_btn
@@ -452,6 +456,7 @@
             this.barcode_bar.Size = new System.Drawing.Size(1297, 40);
             this.barcode_bar.TabIndex = 16;
             this.barcode_bar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.barcode_bar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnPressKey);
             // 
             // panel1
             // 
@@ -849,20 +854,21 @@
             // 
             // dataview_main
             // 
+            this.dataview_main.AllowUserToAddRows = false;
             this.dataview_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataview_main.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataview_main.BackgroundColor = System.Drawing.Color.Cyan;
             this.dataview_main.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataview_main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataview_main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataview_main.ColumnHeadersHeight = 35;
             this.dataview_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataview_main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -871,36 +877,118 @@
             this.price_clm,
             this.quantity_clm,
             this.total_clm,
-            this.productId_clm});
+            this.productId_clm,
+            this.orderId_clm,
+            this.orderDate_clm,
+            this.open_order_btn});
             this.dataview_main.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataview_main.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataview_main.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataview_main.Location = new System.Drawing.Point(1, 90);
             this.dataview_main.Margin = new System.Windows.Forms.Padding(0);
             this.dataview_main.Name = "dataview_main";
             this.dataview_main.ReadOnly = true;
             this.dataview_main.RowHeadersWidth = 25;
             this.dataview_main.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataview_main.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataview_main.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataview_main.RowTemplate.Height = 35;
             this.dataview_main.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataview_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataview_main.Size = new System.Drawing.Size(1630, 655);
             this.dataview_main.TabIndex = 18;
+            this.dataview_main.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_main_Cell_Click);
             this.dataview_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_main_CellContentClick);
             this.dataview_main.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dataview_main_RowHeaderMouseDoubleClick);
+            // 
+            // barcode_clm
+            // 
+            this.barcode_clm.HeaderText = "Barcode";
+            this.barcode_clm.Name = "barcode_clm";
+            this.barcode_clm.ReadOnly = true;
+            this.barcode_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.barcode_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // productName_clm
+            // 
+            this.productName_clm.HeaderText = "Product Name";
+            this.productName_clm.Name = "productName_clm";
+            this.productName_clm.ReadOnly = true;
+            this.productName_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.productName_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // price_clm
+            // 
+            this.price_clm.HeaderText = "Price";
+            this.price_clm.Name = "price_clm";
+            this.price_clm.ReadOnly = true;
+            this.price_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.price_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // quantity_clm
+            // 
+            this.quantity_clm.HeaderText = "Quantity";
+            this.quantity_clm.Name = "quantity_clm";
+            this.quantity_clm.ReadOnly = true;
+            this.quantity_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.quantity_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // total_clm
+            // 
+            this.total_clm.HeaderText = "Total";
+            this.total_clm.Name = "total_clm";
+            this.total_clm.ReadOnly = true;
+            this.total_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.total_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // productId_clm
+            // 
+            this.productId_clm.HeaderText = "Product_ID";
+            this.productId_clm.Name = "productId_clm";
+            this.productId_clm.ReadOnly = true;
+            // 
+            // orderId_clm
+            // 
+            this.orderId_clm.HeaderText = "Order ID";
+            this.orderId_clm.Name = "orderId_clm";
+            this.orderId_clm.ReadOnly = true;
+            // 
+            // orderDate_clm
+            // 
+            this.orderDate_clm.HeaderText = "Order Date";
+            this.orderDate_clm.Name = "orderDate_clm";
+            this.orderDate_clm.ReadOnly = true;
+            // 
+            // open_order_btn
+            // 
+            this.open_order_btn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.NullValue = "Open";
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.open_order_btn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.open_order_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.open_order_btn.HeaderText = "";
+            this.open_order_btn.Name = "open_order_btn";
+            this.open_order_btn.ReadOnly = true;
+            this.open_order_btn.Text = "Open";
+            this.open_order_btn.ToolTipText = "Open";
+            this.open_order_btn.UseColumnTextForButtonValue = true;
             // 
             // order_info
             // 
@@ -1327,162 +1415,6 @@
             this.startup_label.TabIndex = 24;
             this.startup_label.Text = "⫸ Start STSM when windows start :";
             // 
-            // lang_popup
-            // 
-            this.lang_popup.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.langitem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.langitem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.langitem3)});
-            this.lang_popup.Manager = this.bar_manager1;
-            this.lang_popup.Name = "lang_popup";
-            // 
-            // langitem2
-            // 
-            this.langitem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.langitem2.Caption = "Arabic";
-            this.langitem2.Id = 0;
-            this.langitem2.ItemAppearance.Hovered.BackColor = System.Drawing.Color.White;
-            this.langitem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem2.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem2.ItemAppearance.Hovered.Options.UseBackColor = true;
-            this.langitem2.ItemAppearance.Hovered.Options.UseFont = true;
-            this.langitem2.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.langitem2.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem2.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.langitem2.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.langitem2.ItemAppearance.Normal.Options.UseFont = true;
-            this.langitem2.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.langitem2.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Postponed;
-            this.langitem2.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.White;
-            this.langitem2.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem2.ItemInMenuAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem2.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
-            this.langitem2.ItemInMenuAppearance.Hovered.Options.UseFont = true;
-            this.langitem2.ItemInMenuAppearance.Hovered.Options.UseForeColor = true;
-            this.langitem2.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem2.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem2.ItemInMenuAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.langitem2.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
-            this.langitem2.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.langitem2.ItemInMenuAppearance.Normal.Options.UseForeColor = true;
-            this.langitem2.LargeWidth = 10;
-            this.langitem2.Name = "langitem2";
-            this.langitem2.Size = new System.Drawing.Size(238, 37);
-            // 
-            // langitem1
-            // 
-            this.langitem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.langitem1.Caption = "English";
-            this.langitem1.Id = 1;
-            this.langitem1.ItemAppearance.Hovered.BackColor = System.Drawing.Color.White;
-            this.langitem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem1.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem1.ItemAppearance.Hovered.Options.UseBackColor = true;
-            this.langitem1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.langitem1.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.langitem1.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem1.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.langitem1.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.langitem1.ItemAppearance.Normal.Options.UseFont = true;
-            this.langitem1.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.langitem1.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.White;
-            this.langitem1.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem1.ItemInMenuAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem1.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
-            this.langitem1.ItemInMenuAppearance.Hovered.Options.UseFont = true;
-            this.langitem1.ItemInMenuAppearance.Hovered.Options.UseForeColor = true;
-            this.langitem1.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem1.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem1.ItemInMenuAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.langitem1.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
-            this.langitem1.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.langitem1.ItemInMenuAppearance.Normal.Options.UseForeColor = true;
-            this.langitem1.LargeWidth = 10;
-            this.langitem1.Name = "langitem1";
-            this.langitem1.Size = new System.Drawing.Size(238, 37);
-            // 
-            // langitem3
-            // 
-            this.langitem3.Caption = "French";
-            this.langitem3.Id = 2;
-            this.langitem3.ItemAppearance.Hovered.BackColor = System.Drawing.Color.White;
-            this.langitem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem3.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem3.ItemAppearance.Hovered.Options.UseBackColor = true;
-            this.langitem3.ItemAppearance.Hovered.Options.UseFont = true;
-            this.langitem3.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.langitem3.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem3.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.langitem3.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.langitem3.ItemAppearance.Normal.Options.UseFont = true;
-            this.langitem3.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.langitem3.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.White;
-            this.langitem3.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem3.ItemInMenuAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem3.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
-            this.langitem3.ItemInMenuAppearance.Hovered.Options.UseFont = true;
-            this.langitem3.ItemInMenuAppearance.Hovered.Options.UseForeColor = true;
-            this.langitem3.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.langitem3.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.langitem3.ItemInMenuAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.langitem3.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
-            this.langitem3.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.langitem3.ItemInMenuAppearance.Normal.Options.UseForeColor = true;
-            this.langitem3.LargeWidth = 10;
-            this.langitem3.Name = "langitem3";
-            this.langitem3.Size = new System.Drawing.Size(238, 37);
-            // 
-            // bar_manager1
-            // 
-            this.bar_manager1.DockControls.Add(this.barDockControlTop);
-            this.bar_manager1.DockControls.Add(this.barDockControlBottom);
-            this.bar_manager1.DockControls.Add(this.barDockControlLeft);
-            this.bar_manager1.DockControls.Add(this.barDockControlRight);
-            this.bar_manager1.DockWindowTabFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.bar_manager1.Form = this;
-            this.bar_manager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.langitem1,
-            this.langitem2,
-            this.langitem3});
-            this.bar_manager1.MaxItemId = 3;
-            this.bar_manager1.OptionsLayout.AllowRemoveOldItems = true;
-            this.bar_manager1.OptionsLayout.AllowSerializeBarSubItemChildren = true;
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.bar_manager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1861, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 886);
-            this.barDockControlBottom.Manager = this.bar_manager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1861, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.bar_manager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 886);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1861, 0);
-            this.barDockControlRight.Manager = this.bar_manager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 886);
-            // 
             // gc3
             // 
             this.gc3.AllowTouchScroll = true;
@@ -1799,51 +1731,161 @@
             this.pro_manage.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.pro_manage.Click += new System.EventHandler(this.pro_manage_Click);
             // 
-            // barcode_clm
+            // lang_popup
             // 
-            this.barcode_clm.HeaderText = "Barcode";
-            this.barcode_clm.Name = "barcode_clm";
-            this.barcode_clm.ReadOnly = true;
-            this.barcode_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.barcode_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.lang_popup.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.langitem2),
+            new DevExpress.XtraBars.LinkPersistInfo(this.langitem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.langitem3)});
+            this.lang_popup.Manager = this.bar_manager1;
+            this.lang_popup.Name = "lang_popup";
             // 
-            // productName_clm
+            // langitem2
             // 
-            this.productName_clm.HeaderText = "Product Name";
-            this.productName_clm.Name = "productName_clm";
-            this.productName_clm.ReadOnly = true;
-            this.productName_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.productName_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.langitem2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.langitem2.Caption = "Arabic";
+            this.langitem2.Id = 0;
+            this.langitem2.ItemAppearance.Hovered.BackColor = System.Drawing.Color.White;
+            this.langitem2.ItemAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem2.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem2.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.langitem2.ItemAppearance.Hovered.Options.UseFont = true;
+            this.langitem2.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.langitem2.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem2.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem2.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.langitem2.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.langitem2.ItemAppearance.Normal.Options.UseFont = true;
+            this.langitem2.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.langitem2.ItemClickFireMode = DevExpress.XtraBars.BarItemEventFireMode.Postponed;
+            this.langitem2.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.White;
+            this.langitem2.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem2.ItemInMenuAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem2.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
+            this.langitem2.ItemInMenuAppearance.Hovered.Options.UseFont = true;
+            this.langitem2.ItemInMenuAppearance.Hovered.Options.UseForeColor = true;
+            this.langitem2.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem2.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem2.ItemInMenuAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.langitem2.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
+            this.langitem2.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.langitem2.ItemInMenuAppearance.Normal.Options.UseForeColor = true;
+            this.langitem2.LargeWidth = 10;
+            this.langitem2.Name = "langitem2";
+            this.langitem2.Size = new System.Drawing.Size(238, 37);
             // 
-            // price_clm
+            // langitem1
             // 
-            this.price_clm.HeaderText = "Price";
-            this.price_clm.Name = "price_clm";
-            this.price_clm.ReadOnly = true;
-            this.price_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.price_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.langitem1.Border = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.langitem1.Caption = "English";
+            this.langitem1.Id = 1;
+            this.langitem1.ItemAppearance.Hovered.BackColor = System.Drawing.Color.White;
+            this.langitem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem1.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem1.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.langitem1.ItemAppearance.Hovered.Options.UseFont = true;
+            this.langitem1.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.langitem1.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem1.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.langitem1.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.langitem1.ItemAppearance.Normal.Options.UseFont = true;
+            this.langitem1.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.langitem1.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.White;
+            this.langitem1.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem1.ItemInMenuAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem1.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
+            this.langitem1.ItemInMenuAppearance.Hovered.Options.UseFont = true;
+            this.langitem1.ItemInMenuAppearance.Hovered.Options.UseForeColor = true;
+            this.langitem1.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem1.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem1.ItemInMenuAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.langitem1.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
+            this.langitem1.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.langitem1.ItemInMenuAppearance.Normal.Options.UseForeColor = true;
+            this.langitem1.LargeWidth = 10;
+            this.langitem1.Name = "langitem1";
+            this.langitem1.Size = new System.Drawing.Size(238, 37);
             // 
-            // quantity_clm
+            // langitem3
             // 
-            this.quantity_clm.HeaderText = "Quantity";
-            this.quantity_clm.Name = "quantity_clm";
-            this.quantity_clm.ReadOnly = true;
-            this.quantity_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.quantity_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.langitem3.Caption = "French";
+            this.langitem3.Id = 2;
+            this.langitem3.ItemAppearance.Hovered.BackColor = System.Drawing.Color.White;
+            this.langitem3.ItemAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem3.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem3.ItemAppearance.Hovered.Options.UseBackColor = true;
+            this.langitem3.ItemAppearance.Hovered.Options.UseFont = true;
+            this.langitem3.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.langitem3.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem3.ItemAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem3.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.langitem3.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.langitem3.ItemAppearance.Normal.Options.UseFont = true;
+            this.langitem3.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.langitem3.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.White;
+            this.langitem3.ItemInMenuAppearance.Hovered.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem3.ItemInMenuAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem3.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
+            this.langitem3.ItemInMenuAppearance.Hovered.Options.UseFont = true;
+            this.langitem3.ItemInMenuAppearance.Hovered.Options.UseForeColor = true;
+            this.langitem3.ItemInMenuAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.langitem3.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.langitem3.ItemInMenuAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.langitem3.ItemInMenuAppearance.Normal.Options.UseBackColor = true;
+            this.langitem3.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.langitem3.ItemInMenuAppearance.Normal.Options.UseForeColor = true;
+            this.langitem3.LargeWidth = 10;
+            this.langitem3.Name = "langitem3";
+            this.langitem3.Size = new System.Drawing.Size(238, 37);
             // 
-            // total_clm
+            // bar_manager1
             // 
-            this.total_clm.HeaderText = "Total";
-            this.total_clm.Name = "total_clm";
-            this.total_clm.ReadOnly = true;
-            this.total_clm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.total_clm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.bar_manager1.DockControls.Add(this.barDockControlTop);
+            this.bar_manager1.DockControls.Add(this.barDockControlBottom);
+            this.bar_manager1.DockControls.Add(this.barDockControlLeft);
+            this.bar_manager1.DockControls.Add(this.barDockControlRight);
+            this.bar_manager1.DockWindowTabFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.bar_manager1.Form = this;
+            this.bar_manager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.langitem1,
+            this.langitem2,
+            this.langitem3});
+            this.bar_manager1.MaxItemId = 3;
+            this.bar_manager1.OptionsLayout.AllowRemoveOldItems = true;
+            this.bar_manager1.OptionsLayout.AllowSerializeBarSubItemChildren = true;
             // 
-            // productId_clm
+            // barDockControlTop
             // 
-            this.productId_clm.HeaderText = "Product_ID";
-            this.productId_clm.Name = "productId_clm";
-            this.productId_clm.ReadOnly = true;
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.bar_manager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1861, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 886);
+            this.barDockControlBottom.Manager = this.bar_manager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1861, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.bar_manager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 886);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1861, 0);
+            this.barDockControlRight.Manager = this.bar_manager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 886);
             // 
             // MainMenu
             // 
@@ -1875,12 +1917,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gc1)).EndInit();
             this.gc1.ResumeLayout(false);
             this.gc1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lang_popup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bar_manager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gc3)).EndInit();
             this.gc3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gc2)).EndInit();
             this.gc2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lang_popup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bar_manager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1957,6 +1999,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity_clm;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_clm;
         private System.Windows.Forms.DataGridViewTextBoxColumn productId_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderId_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDate_clm;
+        private System.Windows.Forms.DataGridViewButtonColumn open_order_btn;
     }
 }
 
