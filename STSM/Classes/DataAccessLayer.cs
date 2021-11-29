@@ -728,6 +728,20 @@ namespace STSM.Classes
             return ds1;
         }
 
+        public DataTable getOrderDetailsByID(int Oid)
+        {
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("sp_getOrderDetailsByID", sqlconn);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@oid", Oid);
+            da.SelectCommand = com;
+            ds.Clear();
+            da.Fill(ds);
+            DataTable ds1 = ds.Tables[0];
+            return ds1;
+        }
+
         public DataTable selectAllOrders()
         {
             DataAccessLayer copen = new DataAccessLayer();
@@ -741,6 +755,19 @@ namespace STSM.Classes
              
             return ds1;
 
+        }
+
+        public DataTable selectAllOrdersWithUserFullName()
+        {
+            DataAccessLayer copen = new DataAccessLayer();
+            copen.cnOpen();
+            com = new SqlCommand("sp_select_all_orders_withname", sqlconn);
+            com.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand = com;
+            ds.Clear();
+            da.Fill(ds);
+            DataTable ds1 = ds.Tables[0];
+            return ds1;
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////
 

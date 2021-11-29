@@ -23,7 +23,15 @@ namespace STSM.Forms
             m1 = m;
 
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
         private void PosInterface_AddItem_Load(object sender, EventArgs e)
         {
             posProductNameTextBox.ReadOnly = true;

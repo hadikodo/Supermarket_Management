@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Exit_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.about_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.sales_btn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -65,7 +65,9 @@
             this.total_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderId_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDate_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.open_order_btn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.order_info = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.total_usd = new System.Windows.Forms.Label();
@@ -400,11 +402,11 @@
             this.product_label.AutoSize = true;
             this.product_label.BackColor = System.Drawing.Color.Transparent;
             this.product_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.product_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_label.ForeColor = System.Drawing.Color.White;
             this.product_label.Location = new System.Drawing.Point(191, 51);
             this.product_label.Name = "product_label";
-            this.product_label.Size = new System.Drawing.Size(84, 26);
+            this.product_label.Size = new System.Drawing.Size(89, 30);
             this.product_label.TabIndex = 18;
             this.product_label.Text = "Product";
             // 
@@ -414,11 +416,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.product_name_label.AutoSize = true;
             this.product_name_label.BackColor = System.Drawing.Color.Transparent;
-            this.product_name_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_name_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_name_label.ForeColor = System.Drawing.Color.White;
             this.product_name_label.Location = new System.Drawing.Point(17, 51);
             this.product_name_label.Name = "product_name_label";
-            this.product_name_label.Size = new System.Drawing.Size(161, 24);
+            this.product_name_label.Size = new System.Drawing.Size(166, 28);
             this.product_name_label.TabIndex = 17;
             this.product_name_label.Text = "Product Name : ";
             // 
@@ -428,11 +430,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.barcode_label.AutoSize = true;
             this.barcode_label.BackColor = System.Drawing.Color.Transparent;
-            this.barcode_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcode_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barcode_label.ForeColor = System.Drawing.Color.White;
             this.barcode_label.Location = new System.Drawing.Point(16, 12);
             this.barcode_label.Name = "barcode_label";
-            this.barcode_label.Size = new System.Drawing.Size(132, 29);
+            this.barcode_label.Size = new System.Drawing.Size(106, 28);
             this.barcode_label.TabIndex = 16;
             this.barcode_label.Text = "Barcode : ";
             this.barcode_label.Click += new System.EventHandler(this.Barcode_label_Click);
@@ -861,14 +863,14 @@
             this.dataview_main.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataview_main.BackgroundColor = System.Drawing.Color.Cyan;
             this.dataview_main.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataview_main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataview_main.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataview_main.ColumnHeadersHeight = 35;
             this.dataview_main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataview_main.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -879,38 +881,39 @@
             this.total_clm,
             this.productId_clm,
             this.orderId_clm,
+            this.user_id,
             this.orderDate_clm,
+            this.order_total,
             this.open_order_btn});
             this.dataview_main.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataview_main.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataview_main.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataview_main.Location = new System.Drawing.Point(1, 90);
             this.dataview_main.Margin = new System.Windows.Forms.Padding(0);
             this.dataview_main.Name = "dataview_main";
             this.dataview_main.ReadOnly = true;
             this.dataview_main.RowHeadersWidth = 25;
             this.dataview_main.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataview_main.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataview_main.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataview_main.RowTemplate.Height = 35;
             this.dataview_main.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataview_main.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataview_main.Size = new System.Drawing.Size(1630, 655);
+            this.dataview_main.Size = new System.Drawing.Size(1630, 797);
             this.dataview_main.TabIndex = 18;
             this.dataview_main.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_main_Cell_Click);
             this.dataview_main.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataview_main_CellContentClick);
-            this.dataview_main.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dataview_main_RowHeaderMouseDoubleClick);
             // 
             // barcode_clm
             // 
@@ -964,24 +967,36 @@
             this.orderId_clm.Name = "orderId_clm";
             this.orderId_clm.ReadOnly = true;
             // 
+            // user_id
+            // 
+            this.user_id.HeaderText = "Cashier Name";
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            // 
             // orderDate_clm
             // 
             this.orderDate_clm.HeaderText = "Order Date";
             this.orderDate_clm.Name = "orderDate_clm";
             this.orderDate_clm.ReadOnly = true;
             // 
+            // order_total
+            // 
+            this.order_total.HeaderText = "Total Price";
+            this.order_total.Name = "order_total";
+            this.order_total.ReadOnly = true;
+            // 
             // open_order_btn
             // 
             this.open_order_btn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.NullValue = "Open";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.open_order_btn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.NullValue = "Open";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.open_order_btn.DefaultCellStyle = dataGridViewCellStyle2;
             this.open_order_btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.open_order_btn.HeaderText = "";
             this.open_order_btn.Name = "open_order_btn";
@@ -1894,9 +1909,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1861, 886);
             this.Controls.Add(this.gc1);
+            this.Controls.Add(this.order_info);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.order_info);
             this.Controls.Add(this.dataview_main);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -2000,7 +2015,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total_clm;
         private System.Windows.Forms.DataGridViewTextBoxColumn productId_clm;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderId_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDate_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_total;
         private System.Windows.Forms.DataGridViewButtonColumn open_order_btn;
     }
 }

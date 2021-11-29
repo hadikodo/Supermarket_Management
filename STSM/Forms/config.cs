@@ -11,7 +11,15 @@ namespace STSM.Forms
             txtServer.Text = Properties.Settings.Default.Server;
             txtDatabase.Text = Properties.Settings.Default.Database;
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

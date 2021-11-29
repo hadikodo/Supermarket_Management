@@ -15,6 +15,7 @@ namespace STSM.Classes
         public static int newQte { get; set; }
         public static int currentQte { get; set; }
         public static int nbDeleted { get; set; }
+        public static int openedOrderID { get; set; }
 
     }
 }

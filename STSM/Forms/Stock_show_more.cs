@@ -43,11 +43,19 @@ public Stock_show_more(String ID)
            
 
         }
-          
 
-            /// <summary>
-            /// THIS function to fill the dtgview and the labels afte rany action and changes
-            /// </summary>
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
+        /// <summary>
+        /// THIS function to fill the dtgview and the labels afte rany action and changes
+        /// </summary>
         public void fill()
         {
             dt = new DataTable();

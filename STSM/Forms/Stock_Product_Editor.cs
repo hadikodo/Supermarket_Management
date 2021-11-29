@@ -33,6 +33,15 @@ namespace STSM.Forms
             fill();
             
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
         public void Adjust_header()
         {
             dataGridView1.Columns[0].HeaderText = "Product ID";            

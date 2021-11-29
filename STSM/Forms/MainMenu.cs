@@ -22,6 +22,18 @@ namespace STSM
         public MainMenu()
         {
             InitializeComponent();
+        }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
             checkOut_btn.Hide();
             product_label.Text = "Product Name";
             dataview_main.ReadOnly = true;
@@ -54,7 +66,7 @@ namespace STSM
             order_info.Hide();
             sales_back.Hide();
             itemsNumberTextBox.Text = "0";
-            finalDataTable.Columns.Clear();
+            dataview_main.Rows.Clear();
             finalDataTable.Columns.Add("Barcode");
             finalDataTable.Columns.Add("ProductName");
             finalDataTable.Columns.Add("Price");
@@ -64,11 +76,8 @@ namespace STSM
             itemsNumberTextBox.Enabled = false;
             usdTextBox.Enabled = false;
             lebanesePoundsTextBox.Enabled = false;
+            dataview_main.Height = 797;
             barcode_bar.Focus();
-        }
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void Exit_btn_Click(object sender, EventArgs e)
@@ -113,12 +122,14 @@ namespace STSM
             gc3.Visible = false;
             sales_btn.Location = new Point(0, 90);
             barcode_bar.Focus();
-            finalDataTable.Columns.Clear();
             product_label.Text = "Product Name";
+            dataview_main.Rows.Clear();
+            dataview_main.Height = 797;
         }
 
         private void receipt_btn_Click(object sender, EventArgs e)
         {
+            Globals.isHold = false;
             home_btn.Show();
             stock_btn.Show();
             setting_btn.Show();
@@ -138,10 +149,36 @@ namespace STSM
             gc2.Visible = false;
             gc3.Visible = false;
             sales_btn.Location = new Point(0, 90);
+            dataview_main.Visible = true;
+            dataview_main.Columns["orderId_clm"].Visible = true;
+            dataview_main.Columns["orderDate_clm"].Visible = true;
+            dataview_main.Columns["user_id"].Visible = true;
+            dataview_main.Columns["order_total"].Visible = true;
+            dataview_main.Columns["open_order_btn"].Visible = true;
+            dataview_main.Columns["barcode_clm"].Visible = false;
+            dataview_main.Columns["productId_clm"].Visible = false;
+            dataview_main.Columns["price_clm"].Visible = false;
+            dataview_main.Columns["total_clm"].Visible = false;
+            dataview_main.Columns["quantity_clm"].Visible = false;
+            dataview_main.Columns["productName_clm"].Visible = false;
+            DataAccessLayer dal = new DataAccessLayer();
+            DataTable dt = dal.selectAllOrdersWithUserFullName();
+            DataRow[] dr = dt.Select("Hold=0");
+            if (dr.Length == 0)
+            {
+
+            }
+            else
+            {
+                foreach (DataRow row in dr)
+                {
+                    dataview_main.Rows.Add(0, 0, 0, 0, 0, 0, row["O_ID"].ToString(), row["FullName"].ToString(), row["O_Date"].ToString(), row["Total_Price"].ToString());
+                }
+            }
             barcode_bar.Focus();
         }
 
-        private void supplier_btn_Click(object sender, EventArgs e)
+        /*private void supplier_btn_Click(object sender, EventArgs e)
         {
             home_btn.Show();
             stock_btn.Show();
@@ -163,7 +200,7 @@ namespace STSM
             gc3.Visible = false;
             sales_btn.Location = new Point(0, 90);
             barcode_bar.Focus();
-        }
+        }*/
 
         private void stock_btn_Click(object sender, EventArgs e)
         {
@@ -409,6 +446,8 @@ namespace STSM
             dataview_main.Rows.Clear();
             dataview_main.Columns["orderId_clm"].Visible = false;
             dataview_main.Columns["open_order_btn"].Visible = false;
+            dataview_main.Columns["user_id"].Visible = false;
+            dataview_main.Columns["order_total"].Visible = false;
             dataview_main.Columns["open_order_btn"].Visible = false;
             dataview_main.Columns["orderDate_clm"].Visible = false;
             dataview_main.Columns["barcode_clm"].Visible = true;
@@ -423,74 +462,95 @@ namespace STSM
 
         private void dataview_main_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int nullRow = 0;
-            foreach (DataGridViewRow row1 in dataview_main.SelectedRows)
+            if (Globals.isHold)
             {
-                if ((row1.Cells["orderId_clm"].Value == null || row1.Cells["orderId_clm"].Value == DBNull.Value || String.IsNullOrWhiteSpace(row1.Cells["orderId_clm"].Value.ToString())))
+                int nullRow = 0;
+                foreach (DataGridViewRow row1 in dataview_main.SelectedRows)
                 {
-                    nullRow = 1;
-                }
-            }
-            if (nullRow == 0)
-            {
-                if (MessageBox.Show("Do you want to resume the selected order?", "Resume order", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row5 in dataview_main.SelectedRows)
+                    if ((row1.Cells["orderId_clm"].Value == null || row1.Cells["orderId_clm"].Value == DBNull.Value || String.IsNullOrWhiteSpace(row1.Cells["orderId_clm"].Value.ToString())))
                     {
-                        heldOrderId = Int32.Parse(row5.Cells["orderId_clm"].Value.ToString());
+                        nullRow = 1;
                     }
-                    isHeldOrder = 1;
-                    addItem_btn.Show();
-                    pos_btn.Show();
-                    deleteItem_btn.Show();
-                    order_info.Show();
-                    change_quantity.Show();
-                    newSale_btn.Hide();
-                    checkOut_btn.Show();
-                    hold_btn.Show();
-                    return_btn.Show();
-                    float totalPrice = 0;
-                    int orderId = 0;
+                }
+                if (nullRow == 0)
+                {
+                    if (MessageBox.Show("Do you want to resume the selected order?", "Resume order", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        foreach (DataGridViewRow row5 in dataview_main.SelectedRows)
+                        {
+                            heldOrderId = Int32.Parse(row5.Cells["orderId_clm"].Value.ToString());
+                        }
+                        isHeldOrder = 1;
+                        addItem_btn.Show();
+                        pos_btn.Show();
+                        deleteItem_btn.Show();
+                        order_info.Show();
+                        change_quantity.Show();
+                        newSale_btn.Hide();
+                        checkOut_btn.Show();
+                        hold_btn.Show();
+                        return_btn.Show();
+                        float totalPrice = 0;
+                        int orderId = 0;
+                        foreach (DataGridViewRow row in dataview_main.SelectedRows)
+                        {
+                            orderId = Int32.Parse(row.Cells["orderId_clm"].Value.ToString());
+                        }
+                        dataview_main.Rows.Clear();
+                        dataview_main.Columns["orderId_clm"].Visible = false;
+                        dataview_main.Columns["orderDate_clm"].Visible = false;
+                        dataview_main.Columns["open_order_btn"].Visible = false;
+                        dataview_main.Columns["user_id"].Visible = false;
+                        dataview_main.Columns["order_total"].Visible = false;
+                        dataview_main.Columns["barcode_clm"].Visible = true;
+                        dataview_main.Columns["productId_clm"].Visible = false;
+                        dataview_main.Columns["price_clm"].Visible = true;
+                        dataview_main.Columns["total_clm"].Visible = true;
+                        dataview_main.Columns["quantity_clm"].Visible = true;
+                        dataview_main.Columns["productName_clm"].Visible = true;
+                        DataAccessLayer dal = new DataAccessLayer();
+                        Globals.currentOID = orderId;
+                        dal.cnOpen();
+                        dal.inholdOrder(orderId);
+                        dal.cnClose();
+                        DataTable dt = new DataTable();
+                        dal.cnOpen();
+                        SqlDataAdapter sa = new SqlDataAdapter("SELECT Products.Barcode,Products.ProductName,Products.Sell_Price,Orders_Details.QTE,Orders_Details.Total_Price,Products.P_ID FROM Orders_Details INNER JOIN Products ON Orders_Details.P_ID=Products.P_ID WHERE Orders_Details.O_ID=" + orderId + ";", dal.getConnection());
+                        sa.Fill(dt);
+                        DataRow[] dr = dt.Select();
+                        dal.cnClose();
+                        foreach (DataRow row2 in dr)
+                        {
+                            dataview_main.Rows.Add(row2[0].ToString(), row2[1].ToString(), row2[2].ToString(), row2[3].ToString(), row2[4].ToString(), row2[5].ToString());
+                            totalPrice += float.Parse(row2[4].ToString());
+                            itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) + 1).ToString();
+                        }
+                        lebanesePoundsTextBox.Text = totalPrice.ToString();
+                        usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
+                        totalAmount = totalPrice.ToString();
+                    }
+                }
+                gc1.Visible = false;
+                gc2.Visible = false;
+                gc3.Visible = false;
+                barcode_bar.Focus();
+            }
+            else
+            {
+                try
+                {
                     foreach (DataGridViewRow row in dataview_main.SelectedRows)
                     {
-                        orderId = Int32.Parse(row.Cells["orderId_clm"].Value.ToString());
+                        Globals.openedOrderID = Int32.Parse(row.Cells["orderId_clm"].Value.ToString());
                     }
-                    dataview_main.Rows.Clear();
-                    dataview_main.Columns["orderId_clm"].Visible = false;
-                    dataview_main.Columns["orderDate_clm"].Visible = false;
-                    dataview_main.Columns["open_order_btn"].Visible = false;
-                    dataview_main.Columns["barcode_clm"].Visible = true;
-                    dataview_main.Columns["productId_clm"].Visible = false;
-                    dataview_main.Columns["price_clm"].Visible = true;
-                    dataview_main.Columns["total_clm"].Visible = true;
-                    dataview_main.Columns["quantity_clm"].Visible = true;
-                    dataview_main.Columns["productName_clm"].Visible = true;
-                    DataAccessLayer dal = new DataAccessLayer();
-                    Globals.currentOID = orderId;
-                    dal.cnOpen();
-                    dal.inholdOrder(orderId);
-                    dal.cnClose();
-                    DataTable dt = new DataTable();
-                    dal.cnOpen();
-                    SqlDataAdapter sa = new SqlDataAdapter("SELECT Products.Barcode,Products.ProductName,Products.Sell_Price,Orders_Details.QTE,Orders_Details.Total_Price,Products.P_ID FROM Orders_Details INNER JOIN Products ON Orders_Details.P_ID=Products.P_ID WHERE Orders_Details.O_ID=" + orderId + ";", dal.getConnection());
-                    sa.Fill(dt);
-                    DataRow[] dr = dt.Select();
-                    dal.cnClose();
-                    foreach (DataRow row2 in dr)
-                    {
-                        dataview_main.Rows.Add(row2[0].ToString(), row2[1].ToString(), row2[2].ToString(), row2[3].ToString(), row2[4].ToString(), row2[5].ToString());
-                        totalPrice += float.Parse(row2[4].ToString());
-                        itemsNumberTextBox.Text = (Int32.Parse(itemsNumberTextBox.Text.ToString()) + 1).ToString();
-                    }
-                    lebanesePoundsTextBox.Text = totalPrice.ToString();
-                    usdTextBox.Text = (totalPrice / sett.getdollar()).ToString();
-                    totalAmount = totalPrice.ToString();
+                    OrderDetailsForm odf = new OrderDetailsForm();
+                    odf.ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("Somthing Went Wrong !!");
                 }
             }
-            gc1.Visible = false;
-            gc2.Visible = false;
-            gc3.Visible = false;
-            barcode_bar.Focus();
         }
 
         private void deleteItem_btn_Click(object sender, EventArgs e)
@@ -555,6 +615,7 @@ namespace STSM
 
         private void HeldOrders_btn_Click(object sender, EventArgs e)
         {
+            Globals.isHold = true;
             addItem_btn.Hide();
             pos_btn.Hide();
             hold_btn.Hide();
@@ -572,6 +633,8 @@ namespace STSM
             dataview_main.Visible = true;
             dataview_main.Columns["orderId_clm"].Visible = true;
             dataview_main.Columns["orderDate_clm"].Visible = true;
+            dataview_main.Columns["user_id"].Visible = true;
+            dataview_main.Columns["order_total"].Visible = true;
             dataview_main.Columns["open_order_btn"].Visible = true;
             dataview_main.Columns["barcode_clm"].Visible = false;
             dataview_main.Columns["productId_clm"].Visible = false;
@@ -580,7 +643,7 @@ namespace STSM
             dataview_main.Columns["quantity_clm"].Visible = false;
             dataview_main.Columns["productName_clm"].Visible = false;
             DataAccessLayer dal = new DataAccessLayer();
-            DataTable dt = dal.selectAllOrders();
+            DataTable dt = dal.selectAllOrdersWithUserFullName();
             DataRow[] dr = dt.Select("Hold=1");
             if (dr.Length == 0)
             {
@@ -590,7 +653,7 @@ namespace STSM
             {
                 foreach (DataRow row in dr)
                 {
-                    dataview_main.Rows.Add(0, 0, 0, 0, 0, 0, row["O_ID"].ToString(), row["O_Date"].ToString());
+                    dataview_main.Rows.Add(0, 0, 0, 0, 0, 0, row["O_ID"].ToString(), row["FullName"].ToString(), row["O_Date"].ToString(), row["Total_Price"].ToString());
                 }
             }
             barcode_bar.Focus();
@@ -781,7 +844,6 @@ namespace STSM
                     }
                 }
                 dal.holdOrder(Globals.currentOID);
-                Globals.isHold = false;
                 MessageBox.Show("Order has been placed on hold.");
                 home_btn_Click(home_btn, e);
                 sales_btn_Click(sales_btn, e);

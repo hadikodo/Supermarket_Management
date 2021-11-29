@@ -20,7 +20,15 @@ namespace STSM.Forms
         {
             InitializeComponent();
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
         private void Login_Load(object sender, EventArgs e)
         {
             Loading loading = new Loading();

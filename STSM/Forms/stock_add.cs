@@ -25,7 +25,15 @@ namespace STSM.Forms
         {
             InitializeComponent();
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 

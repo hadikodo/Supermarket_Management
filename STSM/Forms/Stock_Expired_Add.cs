@@ -29,7 +29,15 @@ namespace STSM.Forms
             InitializeComponent();
             this.Text += Stock_Product_Editor.Product_name; 
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleparam = base.CreateParams;
+                handleparam.ExStyle |= 0x02000000;
+                return handleparam;
+            }
+        }
         public Stock_Expired_Add(string p_I_D)
         {
             InitializeComponent();
