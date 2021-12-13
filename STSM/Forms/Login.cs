@@ -103,7 +103,7 @@ namespace STSM.Forms
                     {
                         k++;
                         incorrect_txt.Visible = true;
-                        incorrect_txt.Text = "Username or Password incorrect!\n        please try again " + k + "/ 3";
+                        incorrect_txt.Text = "Username or Password Incorrect! Please Try Again " + k + "/ 3";
                         login_btn.Text = "Login";
                         login_btn.Textcolor = Color.White;
                         login_btn.OnHovercolor = Color.White;
@@ -126,7 +126,7 @@ namespace STSM.Forms
                     {
                         k++;
                         incorrect_txt.Visible = true;
-                        incorrect_txt.Text = "Username or Password incorrect!\n        please try again " + k + "/ 3";
+                        incorrect_txt.Text = "Username or Password Incorrect! Please Try Again " + k + "/ 3";
                         login_btn.Text = "Login";
                         login_btn.Textcolor = Color.White;
                         login_btn.OnHovercolor = Color.White;
@@ -153,7 +153,7 @@ namespace STSM.Forms
                                 {
                                     k++;
                                     incorrect_txt.Visible = true;
-                                    incorrect_txt.Text = "Username or Password incorrect!\n        please try again " + k + "/ 3";
+                                    incorrect_txt.Text = "Username or Password Incorrect! Please Try Again " + k + "/ 3";
                                     login_btn.Text = "Login";
                                     login_btn.Textcolor = Color.White;
                                     login_btn.OnHovercolor = Color.White;
@@ -199,7 +199,7 @@ namespace STSM.Forms
                                         {
                                             k++;
                                             incorrect_txt.Visible = true;
-                                            incorrect_txt.Text = "Username or Password incorrect!\n        please try again " + k + "/ 3";
+                                            incorrect_txt.Text = "Username or Password Incorrect! Please Try Again " + k + "/ 3";
                                             login_btn.Text = "Login";
                                             login_btn.Textcolor = Color.White;
                                             login_btn.OnHovercolor = Color.White;
@@ -221,7 +221,7 @@ namespace STSM.Forms
                                     {
                                         k++;
                                         incorrect_txt.Visible = true;
-                                        incorrect_txt.Text = "Username or Password incorrect!\n        please try again " + k + "/ 3";
+                                        incorrect_txt.Text = "Username or Password Incorrect! Please Try Again " + k + "/ 3";
                                         login_btn.Text = "Login";
                                         login_btn.Textcolor = Color.White;
                                         login_btn.OnHovercolor = Color.White;

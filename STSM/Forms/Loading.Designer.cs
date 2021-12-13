@@ -50,7 +50,7 @@
             this.loading_logo.BackColor = System.Drawing.Color.Transparent;
             this.loading_logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loading_logo.BackgroundImage")));
             this.loading_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.loading_logo.Location = new System.Drawing.Point(71, 84);
+            this.loading_logo.Location = new System.Drawing.Point(347, 12);
             this.loading_logo.Name = "loading_logo";
             this.loading_logo.Size = new System.Drawing.Size(168, 162);
             this.loading_logo.TabIndex = 0;
@@ -62,7 +62,8 @@
             this.loading_poweredby.AutoSize = true;
             this.loading_poweredby.BackColor = System.Drawing.Color.Transparent;
             this.loading_poweredby.Font = new System.Drawing.Font("Monotype Corsiva", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loading_poweredby.Location = new System.Drawing.Point(384, 305);
+            this.loading_poweredby.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.loading_poweredby.Location = new System.Drawing.Point(217, 305);
             this.loading_poweredby.Name = "loading_poweredby";
             this.loading_poweredby.Size = new System.Drawing.Size(131, 15);
             this.loading_poweredby.TabIndex = 1;
@@ -72,11 +73,11 @@
             // 
             this.loading_ProgressBar.BackColor = System.Drawing.Color.Transparent;
             this.loading_ProgressBar.BorderRadius = 5;
-            this.loading_ProgressBar.Location = new System.Drawing.Point(31, 237);
+            this.loading_ProgressBar.Location = new System.Drawing.Point(29, 202);
             this.loading_ProgressBar.MaximumValue = 100;
             this.loading_ProgressBar.Name = "loading_ProgressBar";
             this.loading_ProgressBar.ProgressColor = System.Drawing.Color.AliceBlue;
-            this.loading_ProgressBar.Size = new System.Drawing.Size(495, 19);
+            this.loading_ProgressBar.Size = new System.Drawing.Size(495, 20);
             this.loading_ProgressBar.TabIndex = 2;
             this.loading_ProgressBar.Value = 0;
             this.loading_ProgressBar.progressChanged += new System.EventHandler(this.loading_ProgressBar_progressChanged);
@@ -90,10 +91,11 @@
             // 
             this.Progress_Value.AutoSize = true;
             this.Progress_Value.BackColor = System.Drawing.Color.Transparent;
-            this.Progress_Value.Font = new System.Drawing.Font("Monotype Corsiva", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Progress_Value.Location = new System.Drawing.Point(265, 237);
+            this.Progress_Value.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Progress_Value.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Progress_Value.Location = new System.Drawing.Point(262, 202);
             this.Progress_Value.Name = "Progress_Value";
-            this.Progress_Value.Size = new System.Drawing.Size(24, 15);
+            this.Progress_Value.Size = new System.Drawing.Size(33, 22);
             this.Progress_Value.TabIndex = 3;
             this.Progress_Value.Text = "0%";
             // 
@@ -101,11 +103,11 @@
             // 
             this.barLabel.AutoSize = true;
             this.barLabel.BackColor = System.Drawing.Color.Transparent;
-            this.barLabel.Font = new System.Drawing.Font("Monotype Corsiva", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.barLabel.Location = new System.Drawing.Point(237, 259);
+            this.barLabel.Location = new System.Drawing.Point(216, 225);
             this.barLabel.Name = "barLabel";
-            this.barLabel.Size = new System.Drawing.Size(83, 15);
+            this.barLabel.Size = new System.Drawing.Size(117, 22);
             this.barLabel.TabIndex = 4;
             this.barLabel.Text = "Initializing...";
             this.barLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

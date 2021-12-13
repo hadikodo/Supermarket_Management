@@ -76,7 +76,7 @@ namespace STSM
             itemsNumberTextBox.Enabled = false;
             usdTextBox.Enabled = false;
             lebanesePoundsTextBox.Enabled = false;
-            dataview_main.Height = 797;
+            //dataview_main.Height = 800;
             barcode_bar.Focus();
         }
 

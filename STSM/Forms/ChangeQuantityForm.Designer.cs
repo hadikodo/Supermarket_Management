@@ -31,17 +31,17 @@ namespace STSM.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeQuantityForm));
             this.ChangeQuantityFormlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.cancelnq_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.qte_title = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.change_qte_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.newqte_txtbox = new System.Windows.Forms.TextBox();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel2item = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ChangeQuantityFormlayoutControl1ConvertedLayout)).BeginInit();
             this.ChangeQuantityFormlayoutControl1ConvertedLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel2item)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,18 +54,6 @@ namespace STSM.Forms
             this.ChangeQuantityFormlayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
             this.ChangeQuantityFormlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(800, 450);
             this.ChangeQuantityFormlayoutControl1ConvertedLayout.TabIndex = 33;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.GroupStyle = DevExpress.Utils.GroupStyle.Card;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.panel2item});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(800, 450);
-            this.layoutControlGroup1.TextVisible = false;
             // 
             // panel2
             // 
@@ -103,24 +91,24 @@ namespace STSM.Forms
             this.cancelnq_btn.Iconimage_Selected = null;
             this.cancelnq_btn.IconMarginLeft = 0;
             this.cancelnq_btn.IconMarginRight = 0;
-            this.cancelnq_btn.IconRightVisible = true;
+            this.cancelnq_btn.IconRightVisible = false;
             this.cancelnq_btn.IconRightZoom = 0D;
-            this.cancelnq_btn.IconVisible = true;
-            this.cancelnq_btn.IconZoom = 90D;
+            this.cancelnq_btn.IconVisible = false;
+            this.cancelnq_btn.IconZoom = 0D;
             this.cancelnq_btn.IsTab = false;
             this.cancelnq_btn.Location = new System.Drawing.Point(284, 290);
             this.cancelnq_btn.Margin = new System.Windows.Forms.Padding(0);
             this.cancelnq_btn.Name = "cancelnq_btn";
             this.cancelnq_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cancelnq_btn.OnHovercolor = System.Drawing.Color.White;
-            this.cancelnq_btn.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cancelnq_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.cancelnq_btn.OnHoverTextColor = System.Drawing.Color.White;
             this.cancelnq_btn.selected = false;
             this.cancelnq_btn.Size = new System.Drawing.Size(232, 73);
             this.cancelnq_btn.TabIndex = 25;
             this.cancelnq_btn.Text = "Cancel";
             this.cancelnq_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cancelnq_btn.Textcolor = System.Drawing.Color.White;
-            this.cancelnq_btn.TextFont = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold);
+            this.cancelnq_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelnq_btn.Click += new System.EventHandler(this.cancelnq_btn_Click);
             // 
             // qte_title
@@ -153,24 +141,24 @@ namespace STSM.Forms
             this.change_qte_btn.Iconimage_Selected = null;
             this.change_qte_btn.IconMarginLeft = 0;
             this.change_qte_btn.IconMarginRight = 0;
-            this.change_qte_btn.IconRightVisible = true;
+            this.change_qte_btn.IconRightVisible = false;
             this.change_qte_btn.IconRightZoom = 0D;
-            this.change_qte_btn.IconVisible = true;
-            this.change_qte_btn.IconZoom = 90D;
+            this.change_qte_btn.IconVisible = false;
+            this.change_qte_btn.IconZoom = 0D;
             this.change_qte_btn.IsTab = false;
             this.change_qte_btn.Location = new System.Drawing.Point(284, 189);
             this.change_qte_btn.Margin = new System.Windows.Forms.Padding(0);
             this.change_qte_btn.Name = "change_qte_btn";
             this.change_qte_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.change_qte_btn.OnHovercolor = System.Drawing.Color.White;
-            this.change_qte_btn.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.change_qte_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.change_qte_btn.OnHoverTextColor = System.Drawing.Color.White;
             this.change_qte_btn.selected = false;
             this.change_qte_btn.Size = new System.Drawing.Size(232, 73);
             this.change_qte_btn.TabIndex = 24;
             this.change_qte_btn.Text = "Change";
             this.change_qte_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.change_qte_btn.Textcolor = System.Drawing.Color.White;
-            this.change_qte_btn.TextFont = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold);
+            this.change_qte_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.change_qte_btn.Click += new System.EventHandler(this.change_qte_btn_Click);
             // 
             // newqte_txtbox
@@ -181,6 +169,18 @@ namespace STSM.Forms
             this.newqte_txtbox.Size = new System.Drawing.Size(232, 43);
             this.newqte_txtbox.TabIndex = 26;
             this.newqte_txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.GroupStyle = DevExpress.Utils.GroupStyle.Card;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.panel2item});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(800, 450);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // panel2item
             // 
@@ -208,9 +208,9 @@ namespace STSM.Forms
             this.Load += new System.EventHandler(this.ChangeQuantityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ChangeQuantityFormlayoutControl1ConvertedLayout)).EndInit();
             this.ChangeQuantityFormlayoutControl1ConvertedLayout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel2item)).EndInit();
             this.ResumeLayout(false);
 

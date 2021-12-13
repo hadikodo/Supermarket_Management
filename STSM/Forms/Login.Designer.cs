@@ -51,22 +51,23 @@
             // username_tb
             // 
             this.username_tb.BackColor = System.Drawing.Color.White;
+            this.username_tb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.username_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.username_tb.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username_tb.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_tb.ForeColor = System.Drawing.Color.Black;
             this.username_tb.HintForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.username_tb.HintText = "";
+            this.username_tb.HintText = "Username";
+            this.username_tb.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.username_tb.isPassword = false;
             this.username_tb.LineFocusedColor = System.Drawing.Color.MidnightBlue;
             this.username_tb.LineIdleColor = System.Drawing.Color.Transparent;
             this.username_tb.LineMouseHoverColor = System.Drawing.Color.MidnightBlue;
-            this.username_tb.LineThickness = 4;
-            this.username_tb.Location = new System.Drawing.Point(213, 258);
+            this.username_tb.LineThickness = 5;
+            this.username_tb.Location = new System.Drawing.Point(229, 213);
             this.username_tb.Margin = new System.Windows.Forms.Padding(0);
             this.username_tb.Name = "username_tb";
-            this.username_tb.Size = new System.Drawing.Size(242, 42);
+            this.username_tb.Size = new System.Drawing.Size(242, 50);
             this.username_tb.TabIndex = 0;
-            this.username_tb.Text = "Username";
             this.username_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.username_tb.OnValueChanged += new System.EventHandler(this.username_tb_vc);
             this.username_tb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_Key);
@@ -74,22 +75,23 @@
             // pass_tb
             // 
             this.pass_tb.BackColor = System.Drawing.Color.White;
+            this.pass_tb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pass_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pass_tb.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass_tb.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pass_tb.ForeColor = System.Drawing.Color.Black;
             this.pass_tb.HintForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.pass_tb.HintText = "";
+            this.pass_tb.HintText = "Password";
+            this.pass_tb.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.pass_tb.isPassword = false;
             this.pass_tb.LineFocusedColor = System.Drawing.Color.MidnightBlue;
             this.pass_tb.LineIdleColor = System.Drawing.Color.Transparent;
             this.pass_tb.LineMouseHoverColor = System.Drawing.Color.MidnightBlue;
-            this.pass_tb.LineThickness = 4;
-            this.pass_tb.Location = new System.Drawing.Point(213, 320);
+            this.pass_tb.LineThickness = 5;
+            this.pass_tb.Location = new System.Drawing.Point(229, 283);
             this.pass_tb.Margin = new System.Windows.Forms.Padding(0);
             this.pass_tb.Name = "pass_tb";
-            this.pass_tb.Size = new System.Drawing.Size(242, 42);
+            this.pass_tb.Size = new System.Drawing.Size(242, 50);
             this.pass_tb.TabIndex = 1;
-            this.pass_tb.Text = "Password";
             this.pass_tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pass_tb.OnValueChanged += new System.EventHandler(this.pass_tb_vc);
             this.pass_tb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter_Key);
@@ -98,12 +100,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 440);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.Size = new System.Drawing.Size(131, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Powered by SuperTech";
             // 
@@ -123,10 +125,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(146, 258);
+            this.pictureBox2.Location = new System.Drawing.Point(177, 213);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 42);
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -135,10 +137,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(146, 320);
+            this.pictureBox3.Location = new System.Drawing.Point(177, 283);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 42);
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -147,12 +149,12 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(274, 164);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(11, 156);
             this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(117, 43);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(124, 45);
             this.bunifuCustomLabel1.TabIndex = 7;
             this.bunifuCustomLabel1.Text = "Sign In";
             // 
@@ -260,24 +262,24 @@
             this.login_btn.Iconimage_Selected = null;
             this.login_btn.IconMarginLeft = 0;
             this.login_btn.IconMarginRight = 0;
-            this.login_btn.IconRightVisible = true;
+            this.login_btn.IconRightVisible = false;
             this.login_btn.IconRightZoom = 0D;
-            this.login_btn.IconVisible = true;
-            this.login_btn.IconZoom = 90D;
+            this.login_btn.IconVisible = false;
+            this.login_btn.IconZoom = 0D;
             this.login_btn.IsTab = false;
-            this.login_btn.Location = new System.Drawing.Point(242, 375);
+            this.login_btn.Location = new System.Drawing.Point(249, 351);
             this.login_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.login_btn.Name = "login_btn";
             this.login_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.login_btn.OnHovercolor = System.Drawing.Color.White;
-            this.login_btn.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.login_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.login_btn.OnHoverTextColor = System.Drawing.Color.White;
             this.login_btn.selected = false;
-            this.login_btn.Size = new System.Drawing.Size(178, 44);
+            this.login_btn.Size = new System.Drawing.Size(200, 50);
             this.login_btn.TabIndex = 12;
             this.login_btn.Text = "Login";
             this.login_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.login_btn.Textcolor = System.Drawing.Color.White;
-            this.login_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // incorrect_txt
@@ -286,12 +288,12 @@
             this.incorrect_txt.BackColor = System.Drawing.Color.Transparent;
             this.incorrect_txt.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incorrect_txt.ForeColor = System.Drawing.Color.Red;
-            this.incorrect_txt.Location = new System.Drawing.Point(197, 207);
+            this.incorrect_txt.Location = new System.Drawing.Point(135, 405);
             this.incorrect_txt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.incorrect_txt.Name = "incorrect_txt";
-            this.incorrect_txt.Size = new System.Drawing.Size(267, 44);
+            this.incorrect_txt.Size = new System.Drawing.Size(437, 22);
             this.incorrect_txt.TabIndex = 13;
-            this.incorrect_txt.Text = "Username or Password incorrect!\r\n          please try again 1/3";
+            this.incorrect_txt.Text = "Username or Password Incorrect! Please Try Again 1/3";
             // 
             // timer1
             // 

@@ -31,7 +31,7 @@ namespace STSM.Forms
             enablebtn.Enabled = false;
             disablebtn.Enabled = false;
             fill();
-            
+            dataGridView1_CellClick(this, new DataGridViewCellEventArgs(0,0));
         }
         protected override CreateParams CreateParams
         {
@@ -68,22 +68,22 @@ namespace STSM.Forms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //gets a collection that contains all the rows
-            if (e.RowIndex >= 0)
-            {  
-                updatebtn.Enabled = true;
-                showmorebtn.Enabled = true;
-                enablebtn.Enabled = true;
-                disablebtn.Enabled = true;
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                //populate the textbox from specific value of the coordinates of column and row.
-                ID = row.Cells[0].Value.ToString();
-                Product_name = row.Cells[1].Value.ToString();
-                Barcode = row.Cells[2].Value.ToString();
-                Category = row.Cells[3].Value.ToString();
-                label3.Text = "Choosen Product: " + Product_name;
-                isActive = (row.Cells[5].Value.ToString() == "1") ? true : false;
-            }
+                //gets a collection that contains all the rows
+                if (e.RowIndex >= 0)
+                {
+                    updatebtn.Enabled = true;
+                    showmorebtn.Enabled = true;
+                    enablebtn.Enabled = true;
+                    disablebtn.Enabled = true;
+                    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                    //populate the textbox from specific value of the coordinates of column and row.
+                    ID = row.Cells[0].Value.ToString();
+                    Product_name = row.Cells[1].Value.ToString();
+                    Barcode = row.Cells[2].Value.ToString();
+                    Category = row.Cells[3].Value.ToString();
+                    label3.Text = "Choosen Product: " + Product_name;
+                    isActive = (row.Cells[5].Value.ToString() == "1") ? true : false;
+                }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -163,8 +163,16 @@ namespace STSM.Forms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            st.Fill_STOCK_GRID("select a.P_ID,a.ProductName,a.Barcode,a.Sell_Price,b.Cat_Name,a.Active,c.tot from Products a inner join Categories b on a.Cat_ID=b.Cat_ID Left Join (select P_ID,sum(QTE) as tot from ExpiredDate group by P_ID) c on c.P_ID=a.P_ID where a.Cat_ID=b.Cat_ID AND a.ProductName like '" + textBox1.Text + "%' ", dataGridView1);
-            this.Adjust_header();
+            if (!Int32.TryParse(textBox1.Text, out int value))
+            {
+                st.Fill_STOCK_GRID("select a.P_ID,a.ProductName,a.Barcode,a.Sell_Price,b.Cat_Name,a.Active,c.tot from Products a inner join Categories b on a.Cat_ID=b.Cat_ID Left Join (select P_ID,sum(QTE) as tot from ExpiredDate group by P_ID) c on c.P_ID=a.P_ID where a.Cat_ID=b.Cat_ID AND a.ProductName like '" + textBox1.Text + "%' ", dataGridView1);
+                this.Adjust_header();
+            }
+            else
+            {
+                st.Fill_STOCK_GRID("select a.P_ID,a.ProductName,a.Barcode,a.Sell_Price,b.Cat_Name,a.Active,c.tot from Products a inner join Categories b on a.Cat_ID=b.Cat_ID Left Join (select P_ID,sum(QTE) as tot from ExpiredDate group by P_ID) c on c.P_ID=a.P_ID where a.Cat_ID=b.Cat_ID AND a.Barcode like '" + textBox1.Text + "%' OR a.P_ID like '" + textBox1.Text + "%' ", dataGridView1);
+                this.Adjust_header();
+            }
         }
 
         private void addbtn_Click(object sender, EventArgs e)

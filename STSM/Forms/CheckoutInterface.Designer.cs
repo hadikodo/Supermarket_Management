@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckoutInterface));
             this.CheckoutInterfacelayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.exitCheckout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -41,11 +40,12 @@
             this.receivedTextBox = new System.Windows.Forms.TextBox();
             this.newSale_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panel2item = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.CheckoutInterfacelayoutControl1ConvertedLayout)).BeginInit();
             this.CheckoutInterfacelayoutControl1ConvertedLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel2item)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,16 +58,6 @@
             this.CheckoutInterfacelayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
             this.CheckoutInterfacelayoutControl1ConvertedLayout.Size = new System.Drawing.Size(842, 495);
             this.CheckoutInterfacelayoutControl1ConvertedLayout.TabIndex = 32;
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.False;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.panel2item});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(842, 495);
-            this.layoutControlGroup1.TextVisible = false;
             // 
             // panel2
             // 
@@ -110,24 +100,24 @@
             this.exitCheckout.Iconimage_Selected = null;
             this.exitCheckout.IconMarginLeft = 0;
             this.exitCheckout.IconMarginRight = 0;
-            this.exitCheckout.IconRightVisible = true;
+            this.exitCheckout.IconRightVisible = false;
             this.exitCheckout.IconRightZoom = 0D;
-            this.exitCheckout.IconVisible = true;
-            this.exitCheckout.IconZoom = 90D;
+            this.exitCheckout.IconVisible = false;
+            this.exitCheckout.IconZoom = 0D;
             this.exitCheckout.IsTab = false;
             this.exitCheckout.Location = new System.Drawing.Point(303, 301);
             this.exitCheckout.Margin = new System.Windows.Forms.Padding(0);
             this.exitCheckout.Name = "exitCheckout";
             this.exitCheckout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.exitCheckout.OnHovercolor = System.Drawing.Color.White;
-            this.exitCheckout.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.exitCheckout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.exitCheckout.OnHoverTextColor = System.Drawing.Color.White;
             this.exitCheckout.selected = false;
             this.exitCheckout.Size = new System.Drawing.Size(232, 73);
             this.exitCheckout.TabIndex = 30;
             this.exitCheckout.Text = "Exit";
             this.exitCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.exitCheckout.Textcolor = System.Drawing.Color.White;
-            this.exitCheckout.TextFont = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold);
+            this.exitCheckout.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitCheckout.Click += new System.EventHandler(this.ExitCheckout_Click);
             // 
             // bunifuFlatButton1
@@ -148,32 +138,32 @@
             this.bunifuFlatButton1.Iconimage_Selected = null;
             this.bunifuFlatButton1.IconMarginLeft = 0;
             this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightVisible = false;
             this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 90D;
+            this.bunifuFlatButton1.IconVisible = false;
+            this.bunifuFlatButton1.IconZoom = 0D;
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(558, 301);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(232, 73);
             this.bunifuFlatButton1.TabIndex = 25;
             this.bunifuFlatButton1.Text = "Cancel";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.BunifuFlatButton1_Click);
             // 
             // changeTextBox
             // 
-            this.changeTextBox.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeTextBox.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeTextBox.Location = new System.Drawing.Point(303, 199);
             this.changeTextBox.Name = "changeTextBox";
-            this.changeTextBox.Size = new System.Drawing.Size(232, 36);
+            this.changeTextBox.Size = new System.Drawing.Size(232, 34);
             this.changeTextBox.TabIndex = 29;
             this.changeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.changeTextBox.Visible = false;
@@ -217,10 +207,10 @@
             // 
             // receivedTextBox
             // 
-            this.receivedTextBox.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receivedTextBox.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receivedTextBox.Location = new System.Drawing.Point(303, 139);
             this.receivedTextBox.Name = "receivedTextBox";
-            this.receivedTextBox.Size = new System.Drawing.Size(232, 36);
+            this.receivedTextBox.Size = new System.Drawing.Size(232, 34);
             this.receivedTextBox.TabIndex = 27;
             this.receivedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -242,34 +232,44 @@
             this.newSale_btn.Iconimage_Selected = null;
             this.newSale_btn.IconMarginLeft = 0;
             this.newSale_btn.IconMarginRight = 0;
-            this.newSale_btn.IconRightVisible = true;
+            this.newSale_btn.IconRightVisible = false;
             this.newSale_btn.IconRightZoom = 0D;
-            this.newSale_btn.IconVisible = true;
-            this.newSale_btn.IconZoom = 90D;
+            this.newSale_btn.IconVisible = false;
+            this.newSale_btn.IconZoom = 0D;
             this.newSale_btn.IsTab = false;
             this.newSale_btn.Location = new System.Drawing.Point(45, 301);
             this.newSale_btn.Margin = new System.Windows.Forms.Padding(0);
             this.newSale_btn.Name = "newSale_btn";
             this.newSale_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.newSale_btn.OnHovercolor = System.Drawing.Color.White;
-            this.newSale_btn.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.newSale_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.newSale_btn.OnHoverTextColor = System.Drawing.Color.White;
             this.newSale_btn.selected = false;
             this.newSale_btn.Size = new System.Drawing.Size(232, 73);
             this.newSale_btn.TabIndex = 24;
             this.newSale_btn.Text = "Complete Sale";
             this.newSale_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newSale_btn.Textcolor = System.Drawing.Color.White;
-            this.newSale_btn.TextFont = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold);
+            this.newSale_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newSale_btn.Click += new System.EventHandler(this.NewSale_btn_Click);
             // 
             // totalTextBox
             // 
-            this.totalTextBox.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTextBox.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalTextBox.Location = new System.Drawing.Point(303, 76);
             this.totalTextBox.Name = "totalTextBox";
-            this.totalTextBox.Size = new System.Drawing.Size(232, 36);
+            this.totalTextBox.Size = new System.Drawing.Size(232, 34);
             this.totalTextBox.TabIndex = 26;
             this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.False;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.panel2item});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(842, 495);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // panel2item
             // 
@@ -301,9 +301,9 @@
             this.Load += new System.EventHandler(this.CheckoutInterface_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CheckoutInterfacelayoutControl1ConvertedLayout)).EndInit();
             this.CheckoutInterfacelayoutControl1ConvertedLayout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel2item)).EndInit();
             this.ResumeLayout(false);
 
