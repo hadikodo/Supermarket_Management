@@ -96,7 +96,7 @@ namespace STSM.Forms
             this.cancelnq_btn.IconVisible = false;
             this.cancelnq_btn.IconZoom = 0D;
             this.cancelnq_btn.IsTab = false;
-            this.cancelnq_btn.Location = new System.Drawing.Point(284, 290);
+            this.cancelnq_btn.Location = new System.Drawing.Point(284, 311);
             this.cancelnq_btn.Margin = new System.Windows.Forms.Padding(0);
             this.cancelnq_btn.Name = "cancelnq_btn";
             this.cancelnq_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -108,18 +108,18 @@ namespace STSM.Forms
             this.cancelnq_btn.Text = "Cancel";
             this.cancelnq_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cancelnq_btn.Textcolor = System.Drawing.Color.White;
-            this.cancelnq_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelnq_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelnq_btn.Click += new System.EventHandler(this.cancelnq_btn_Click);
             // 
             // qte_title
             // 
             this.qte_title.AutoSize = true;
             this.qte_title.BackColor = System.Drawing.Color.Transparent;
-            this.qte_title.Font = new System.Drawing.Font("Monotype Corsiva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qte_title.Font = new System.Drawing.Font("Andalus", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qte_title.ForeColor = System.Drawing.Color.White;
-            this.qte_title.Location = new System.Drawing.Point(62, 106);
+            this.qte_title.Location = new System.Drawing.Point(293, 82);
             this.qte_title.Name = "qte_title";
-            this.qte_title.Size = new System.Drawing.Size(194, 39);
+            this.qte_title.Size = new System.Drawing.Size(216, 48);
             this.qte_title.TabIndex = 1;
             this.qte_title.Text = "New Quantity";
             // 
@@ -146,7 +146,7 @@ namespace STSM.Forms
             this.change_qte_btn.IconVisible = false;
             this.change_qte_btn.IconZoom = 0D;
             this.change_qte_btn.IsTab = false;
-            this.change_qte_btn.Location = new System.Drawing.Point(284, 189);
+            this.change_qte_btn.Location = new System.Drawing.Point(284, 216);
             this.change_qte_btn.Margin = new System.Windows.Forms.Padding(0);
             this.change_qte_btn.Name = "change_qte_btn";
             this.change_qte_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -158,13 +158,13 @@ namespace STSM.Forms
             this.change_qte_btn.Text = "Change";
             this.change_qte_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.change_qte_btn.Textcolor = System.Drawing.Color.White;
-            this.change_qte_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change_qte_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.change_qte_btn.Click += new System.EventHandler(this.change_qte_btn_Click);
             // 
             // newqte_txtbox
             // 
             this.newqte_txtbox.Font = new System.Drawing.Font("Monotype Corsiva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newqte_txtbox.Location = new System.Drawing.Point(284, 106);
+            this.newqte_txtbox.Location = new System.Drawing.Point(284, 144);
             this.newqte_txtbox.Name = "newqte_txtbox";
             this.newqte_txtbox.Size = new System.Drawing.Size(232, 43);
             this.newqte_txtbox.TabIndex = 26;

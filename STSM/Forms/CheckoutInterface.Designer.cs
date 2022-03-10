@@ -117,7 +117,7 @@
             this.exitCheckout.Text = "Exit";
             this.exitCheckout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.exitCheckout.Textcolor = System.Drawing.Color.White;
-            this.exitCheckout.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitCheckout.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitCheckout.Click += new System.EventHandler(this.ExitCheckout_Click);
             // 
             // bunifuFlatButton1
@@ -155,7 +155,7 @@
             this.bunifuFlatButton1.Text = "Cancel";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.BunifuFlatButton1_Click);
             // 
             // changeTextBox
@@ -172,11 +172,11 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(171, 78);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(171, 71);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(71, 33);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(78, 41);
             this.bunifuCustomLabel1.TabIndex = 1;
             this.bunifuCustomLabel1.Text = "Total";
             // 
@@ -184,11 +184,11 @@
             // 
             this.changeLabel.AutoSize = true;
             this.changeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.changeLabel.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLabel.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeLabel.ForeColor = System.Drawing.Color.White;
-            this.changeLabel.Location = new System.Drawing.Point(171, 199);
+            this.changeLabel.Location = new System.Drawing.Point(171, 194);
             this.changeLabel.Name = "changeLabel";
-            this.changeLabel.Size = new System.Drawing.Size(90, 33);
+            this.changeLabel.Size = new System.Drawing.Size(110, 41);
             this.changeLabel.TabIndex = 28;
             this.changeLabel.Text = "Change";
             this.changeLabel.Visible = false;
@@ -197,11 +197,11 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(171, 139);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(171, 134);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(106, 33);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(123, 41);
             this.bunifuCustomLabel2.TabIndex = 3;
             this.bunifuCustomLabel2.Text = "Received";
             // 
@@ -249,7 +249,7 @@
             this.newSale_btn.Text = "Complete Sale";
             this.newSale_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newSale_btn.Textcolor = System.Drawing.Color.White;
-            this.newSale_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSale_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newSale_btn.Click += new System.EventHandler(this.NewSale_btn_Click);
             // 
             // totalTextBox

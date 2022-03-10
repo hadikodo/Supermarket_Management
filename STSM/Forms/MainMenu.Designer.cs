@@ -46,15 +46,15 @@
             this.barcode_label = new System.Windows.Forms.Label();
             this.barcode_bar = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.panel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.hold_btn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.return_btn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.deleteItem_btn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.holdOrders_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.checkOut_btn = new System.Windows.Forms.Button();
-            this.change_quantity = new Bunifu.Framework.UI.BunifuFlatButton();
             this.sales_back = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.return_btn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.holdOrders_btn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.change_quantity = new Bunifu.Framework.UI.BunifuFlatButton();
             this.newSale_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pos_btn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.hold_btn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.deleteItem_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.addItem_btn = new System.Windows.Forms.Button();
             this.dataview_main = new System.Windows.Forms.DataGridView();
@@ -158,7 +158,7 @@
             this.Exit_btn.Text = "Logout";
             this.Exit_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Exit_btn.Textcolor = System.Drawing.Color.White;
-            this.Exit_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit_btn.Click += new System.EventHandler(this.Exit_btn_Click);
             // 
             // about_btn
@@ -197,7 +197,7 @@
             this.about_btn.Text = "About Us";
             this.about_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.about_btn.Textcolor = System.Drawing.Color.White;
-            this.about_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.about_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.about_btn.Click += new System.EventHandler(this.about_btn_Click);
             // 
             // sales_btn
@@ -236,7 +236,7 @@
             this.sales_btn.Text = "Sales";
             this.sales_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.sales_btn.Textcolor = System.Drawing.Color.White;
-            this.sales_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sales_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sales_btn.Click += new System.EventHandler(this.sales_btn_Click);
             // 
             // setting_btn
@@ -275,7 +275,7 @@
             this.setting_btn.Text = "Settings";
             this.setting_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.setting_btn.Textcolor = System.Drawing.Color.White;
-            this.setting_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setting_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.setting_btn.Click += new System.EventHandler(this.setting_btn_Click);
             // 
             // home_btn
@@ -314,7 +314,7 @@
             this.home_btn.Text = "Home";
             this.home_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.home_btn.Textcolor = System.Drawing.Color.White;
-            this.home_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.home_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
             // receipt_btn
@@ -353,7 +353,7 @@
             this.receipt_btn.Text = "Receipts";
             this.receipt_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.receipt_btn.Textcolor = System.Drawing.Color.White;
-            this.receipt_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receipt_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receipt_btn.Click += new System.EventHandler(this.receipt_btn_Click);
             // 
             // stock_btn
@@ -392,7 +392,7 @@
             this.stock_btn.Text = "Stock";
             this.stock_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.stock_btn.Textcolor = System.Drawing.Color.White;
-            this.stock_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stock_btn.Click += new System.EventHandler(this.stock_btn_Click);
             // 
             // product_label
@@ -402,11 +402,11 @@
             this.product_label.AutoSize = true;
             this.product_label.BackColor = System.Drawing.Color.Transparent;
             this.product_label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.product_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_label.ForeColor = System.Drawing.Color.White;
-            this.product_label.Location = new System.Drawing.Point(191, 51);
+            this.product_label.Location = new System.Drawing.Point(191, 49);
             this.product_label.Name = "product_label";
-            this.product_label.Size = new System.Drawing.Size(89, 30);
+            this.product_label.Size = new System.Drawing.Size(104, 40);
             this.product_label.TabIndex = 18;
             this.product_label.Text = "Product";
             // 
@@ -416,11 +416,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.product_name_label.AutoSize = true;
             this.product_name_label.BackColor = System.Drawing.Color.Transparent;
-            this.product_name_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_name_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_name_label.ForeColor = System.Drawing.Color.White;
-            this.product_name_label.Location = new System.Drawing.Point(17, 51);
+            this.product_name_label.Location = new System.Drawing.Point(9, 48);
             this.product_name_label.Name = "product_name_label";
-            this.product_name_label.Size = new System.Drawing.Size(166, 28);
+            this.product_name_label.Size = new System.Drawing.Size(190, 38);
             this.product_name_label.TabIndex = 17;
             this.product_name_label.Text = "Product Name : ";
             // 
@@ -430,11 +430,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.barcode_label.AutoSize = true;
             this.barcode_label.BackColor = System.Drawing.Color.Transparent;
-            this.barcode_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcode_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barcode_label.ForeColor = System.Drawing.Color.White;
-            this.barcode_label.Location = new System.Drawing.Point(16, 12);
+            this.barcode_label.Location = new System.Drawing.Point(9, 5);
             this.barcode_label.Name = "barcode_label";
-            this.barcode_label.Size = new System.Drawing.Size(106, 28);
+            this.barcode_label.Size = new System.Drawing.Size(125, 38);
             this.barcode_label.TabIndex = 16;
             this.barcode_label.Text = "Barcode : ";
             this.barcode_label.Click += new System.EventHandler(this.Barcode_label_Click);
@@ -449,7 +449,7 @@
             this.barcode_bar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.barcode_bar.BorderThickness = 5;
             this.barcode_bar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.barcode_bar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barcode_bar.Font = new System.Drawing.Font("Andalus", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.barcode_bar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.barcode_bar.isPassword = false;
             this.barcode_bar.Location = new System.Drawing.Point(154, 5);
@@ -466,22 +466,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.hold_btn);
-            this.panel1.Controls.Add(this.return_btn);
-            this.panel1.Controls.Add(this.Exit_btn);
-            this.panel1.Controls.Add(this.deleteItem_btn);
-            this.panel1.Controls.Add(this.sales_btn);
-            this.panel1.Controls.Add(this.home_btn);
-            this.panel1.Controls.Add(this.holdOrders_btn);
             this.panel1.Controls.Add(this.checkOut_btn);
-            this.panel1.Controls.Add(this.change_quantity);
-            this.panel1.Controls.Add(this.setting_btn);
             this.panel1.Controls.Add(this.sales_back);
             this.panel1.Controls.Add(this.about_btn);
+            this.panel1.Controls.Add(this.return_btn);
+            this.panel1.Controls.Add(this.sales_btn);
+            this.panel1.Controls.Add(this.home_btn);
+            this.panel1.Controls.Add(this.setting_btn);
             this.panel1.Controls.Add(this.receipt_btn);
             this.panel1.Controls.Add(this.stock_btn);
+            this.panel1.Controls.Add(this.holdOrders_btn);
+            this.panel1.Controls.Add(this.change_quantity);
             this.panel1.Controls.Add(this.newSale_btn);
             this.panel1.Controls.Add(this.pos_btn);
+            this.panel1.Controls.Add(this.hold_btn);
+            this.panel1.Controls.Add(this.deleteItem_btn);
+            this.panel1.Controls.Add(this.Exit_btn);
             this.panel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.GradientBottomRight = System.Drawing.Color.Cyan;
             this.panel1.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -492,162 +492,6 @@
             this.panel1.Size = new System.Drawing.Size(231, 887);
             this.panel1.TabIndex = 16;
             // 
-            // hold_btn
-            // 
-            this.hold_btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.hold_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.hold_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.hold_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hold_btn.BorderRadius = 0;
-            this.hold_btn.ButtonText = "Hold";
-            this.hold_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hold_btn.DisabledColor = System.Drawing.Color.Gray;
-            this.hold_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hold_btn.ForeColor = System.Drawing.Color.White;
-            this.hold_btn.Iconcolor = System.Drawing.Color.Transparent;
-            this.hold_btn.Iconimage = null;
-            this.hold_btn.Iconimage_right = null;
-            this.hold_btn.Iconimage_right_Selected = null;
-            this.hold_btn.Iconimage_Selected = null;
-            this.hold_btn.IconMarginLeft = 0;
-            this.hold_btn.IconMarginRight = 0;
-            this.hold_btn.IconRightVisible = false;
-            this.hold_btn.IconRightZoom = 0D;
-            this.hold_btn.IconVisible = false;
-            this.hold_btn.IconZoom = 0D;
-            this.hold_btn.IsTab = false;
-            this.hold_btn.Location = new System.Drawing.Point(0, 270);
-            this.hold_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.hold_btn.Name = "hold_btn";
-            this.hold_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.hold_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
-            this.hold_btn.OnHoverTextColor = System.Drawing.Color.White;
-            this.hold_btn.selected = false;
-            this.hold_btn.Size = new System.Drawing.Size(232, 92);
-            this.hold_btn.TabIndex = 36;
-            this.hold_btn.Text = "Hold";
-            this.hold_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.hold_btn.Textcolor = System.Drawing.Color.White;
-            this.hold_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hold_btn.Click += new System.EventHandler(this.hold_btn_Click);
-            // 
-            // return_btn
-            // 
-            this.return_btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.return_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.return_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.return_btn.BorderRadius = 0;
-            this.return_btn.ButtonText = "Return";
-            this.return_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.return_btn.DisabledColor = System.Drawing.Color.Gray;
-            this.return_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_btn.ForeColor = System.Drawing.Color.White;
-            this.return_btn.Iconcolor = System.Drawing.Color.Transparent;
-            this.return_btn.Iconimage = null;
-            this.return_btn.Iconimage_right = null;
-            this.return_btn.Iconimage_right_Selected = null;
-            this.return_btn.Iconimage_Selected = null;
-            this.return_btn.IconMarginLeft = 0;
-            this.return_btn.IconMarginRight = 0;
-            this.return_btn.IconRightVisible = false;
-            this.return_btn.IconRightZoom = 0D;
-            this.return_btn.IconVisible = false;
-            this.return_btn.IconZoom = 0D;
-            this.return_btn.IsTab = false;
-            this.return_btn.Location = new System.Drawing.Point(0, 360);
-            this.return_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.return_btn.Name = "return_btn";
-            this.return_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.return_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
-            this.return_btn.OnHoverTextColor = System.Drawing.Color.White;
-            this.return_btn.selected = false;
-            this.return_btn.Size = new System.Drawing.Size(232, 92);
-            this.return_btn.TabIndex = 25;
-            this.return_btn.Text = "Return";
-            this.return_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.return_btn.Textcolor = System.Drawing.Color.White;
-            this.return_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
-            // 
-            // deleteItem_btn
-            // 
-            this.deleteItem_btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.deleteItem_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteItem_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.deleteItem_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deleteItem_btn.BorderRadius = 0;
-            this.deleteItem_btn.ButtonText = "Delete Item";
-            this.deleteItem_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteItem_btn.DisabledColor = System.Drawing.Color.Gray;
-            this.deleteItem_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteItem_btn.ForeColor = System.Drawing.Color.White;
-            this.deleteItem_btn.Iconcolor = System.Drawing.Color.Transparent;
-            this.deleteItem_btn.Iconimage = null;
-            this.deleteItem_btn.Iconimage_right = null;
-            this.deleteItem_btn.Iconimage_right_Selected = null;
-            this.deleteItem_btn.Iconimage_Selected = null;
-            this.deleteItem_btn.IconMarginLeft = 0;
-            this.deleteItem_btn.IconMarginRight = 0;
-            this.deleteItem_btn.IconRightVisible = false;
-            this.deleteItem_btn.IconRightZoom = 0D;
-            this.deleteItem_btn.IconVisible = false;
-            this.deleteItem_btn.IconZoom = 0D;
-            this.deleteItem_btn.IsTab = false;
-            this.deleteItem_btn.Location = new System.Drawing.Point(0, 182);
-            this.deleteItem_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.deleteItem_btn.Name = "deleteItem_btn";
-            this.deleteItem_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.deleteItem_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
-            this.deleteItem_btn.OnHoverTextColor = System.Drawing.Color.White;
-            this.deleteItem_btn.selected = false;
-            this.deleteItem_btn.Size = new System.Drawing.Size(232, 92);
-            this.deleteItem_btn.TabIndex = 23;
-            this.deleteItem_btn.Text = "Delete Item";
-            this.deleteItem_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.deleteItem_btn.Textcolor = System.Drawing.Color.White;
-            this.deleteItem_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteItem_btn.Click += new System.EventHandler(this.deleteItem_btn_Click);
-            // 
-            // holdOrders_btn
-            // 
-            this.holdOrders_btn.Activecolor = System.Drawing.Color.SteelBlue;
-            this.holdOrders_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.holdOrders_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.holdOrders_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.holdOrders_btn.BorderRadius = 0;
-            this.holdOrders_btn.ButtonText = "Holded Orders";
-            this.holdOrders_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.holdOrders_btn.DisabledColor = System.Drawing.Color.Gray;
-            this.holdOrders_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.holdOrders_btn.ForeColor = System.Drawing.Color.White;
-            this.holdOrders_btn.Iconcolor = System.Drawing.Color.Transparent;
-            this.holdOrders_btn.Iconimage = null;
-            this.holdOrders_btn.Iconimage_right = null;
-            this.holdOrders_btn.Iconimage_right_Selected = null;
-            this.holdOrders_btn.Iconimage_Selected = null;
-            this.holdOrders_btn.IconMarginLeft = 0;
-            this.holdOrders_btn.IconMarginRight = 0;
-            this.holdOrders_btn.IconRightVisible = false;
-            this.holdOrders_btn.IconRightZoom = 0D;
-            this.holdOrders_btn.IconVisible = false;
-            this.holdOrders_btn.IconZoom = 0D;
-            this.holdOrders_btn.IsTab = false;
-            this.holdOrders_btn.Location = new System.Drawing.Point(0, 90);
-            this.holdOrders_btn.Margin = new System.Windows.Forms.Padding(0);
-            this.holdOrders_btn.Name = "holdOrders_btn";
-            this.holdOrders_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.holdOrders_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
-            this.holdOrders_btn.OnHoverTextColor = System.Drawing.Color.White;
-            this.holdOrders_btn.selected = false;
-            this.holdOrders_btn.Size = new System.Drawing.Size(232, 92);
-            this.holdOrders_btn.TabIndex = 24;
-            this.holdOrders_btn.Text = "Holded Orders";
-            this.holdOrders_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.holdOrders_btn.Textcolor = System.Drawing.Color.White;
-            this.holdOrders_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.holdOrders_btn.Click += new System.EventHandler(this.HeldOrders_btn_Click);
-            // 
             // checkOut_btn
             // 
             this.checkOut_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -657,7 +501,7 @@
             this.checkOut_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
             this.checkOut_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
             this.checkOut_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkOut_btn.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkOut_btn.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkOut_btn.ForeColor = System.Drawing.Color.White;
             this.checkOut_btn.Location = new System.Drawing.Point(-1, 683);
             this.checkOut_btn.Name = "checkOut_btn";
@@ -666,45 +510,6 @@
             this.checkOut_btn.Text = "Checkout";
             this.checkOut_btn.UseVisualStyleBackColor = false;
             this.checkOut_btn.Click += new System.EventHandler(this.checkOut_btn_Click);
-            // 
-            // change_quantity
-            // 
-            this.change_quantity.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.change_quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.change_quantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.change_quantity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.change_quantity.BorderRadius = 0;
-            this.change_quantity.ButtonText = "Change Quantity";
-            this.change_quantity.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.change_quantity.DisabledColor = System.Drawing.Color.Gray;
-            this.change_quantity.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.change_quantity.ForeColor = System.Drawing.Color.White;
-            this.change_quantity.Iconcolor = System.Drawing.Color.Transparent;
-            this.change_quantity.Iconimage = null;
-            this.change_quantity.Iconimage_right = null;
-            this.change_quantity.Iconimage_right_Selected = null;
-            this.change_quantity.Iconimage_Selected = null;
-            this.change_quantity.IconMarginLeft = 0;
-            this.change_quantity.IconMarginRight = 0;
-            this.change_quantity.IconRightVisible = false;
-            this.change_quantity.IconRightZoom = 0D;
-            this.change_quantity.IconVisible = false;
-            this.change_quantity.IconZoom = 0D;
-            this.change_quantity.IsTab = false;
-            this.change_quantity.Location = new System.Drawing.Point(0, 91);
-            this.change_quantity.Margin = new System.Windows.Forms.Padding(0);
-            this.change_quantity.Name = "change_quantity";
-            this.change_quantity.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.change_quantity.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
-            this.change_quantity.OnHoverTextColor = System.Drawing.Color.White;
-            this.change_quantity.selected = false;
-            this.change_quantity.Size = new System.Drawing.Size(232, 92);
-            this.change_quantity.TabIndex = 34;
-            this.change_quantity.Text = "Change Quantity";
-            this.change_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.change_quantity.Textcolor = System.Drawing.Color.White;
-            this.change_quantity.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.change_quantity.Click += new System.EventHandler(this.change_quantity_Click);
             // 
             // sales_back
             // 
@@ -742,8 +547,125 @@
             this.sales_back.Text = "Back";
             this.sales_back.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.sales_back.Textcolor = System.Drawing.Color.White;
-            this.sales_back.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sales_back.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sales_back.Click += new System.EventHandler(this.sales_back_Click);
+            // 
+            // return_btn
+            // 
+            this.return_btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.return_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.return_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.return_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.return_btn.BorderRadius = 0;
+            this.return_btn.ButtonText = "Return";
+            this.return_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.return_btn.DisabledColor = System.Drawing.Color.Gray;
+            this.return_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.return_btn.ForeColor = System.Drawing.Color.White;
+            this.return_btn.Iconcolor = System.Drawing.Color.Transparent;
+            this.return_btn.Iconimage = null;
+            this.return_btn.Iconimage_right = null;
+            this.return_btn.Iconimage_right_Selected = null;
+            this.return_btn.Iconimage_Selected = null;
+            this.return_btn.IconMarginLeft = 0;
+            this.return_btn.IconMarginRight = 0;
+            this.return_btn.IconRightVisible = false;
+            this.return_btn.IconRightZoom = 0D;
+            this.return_btn.IconVisible = false;
+            this.return_btn.IconZoom = 0D;
+            this.return_btn.IsTab = false;
+            this.return_btn.Location = new System.Drawing.Point(0, 360);
+            this.return_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.return_btn.Name = "return_btn";
+            this.return_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.return_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.return_btn.OnHoverTextColor = System.Drawing.Color.White;
+            this.return_btn.selected = false;
+            this.return_btn.Size = new System.Drawing.Size(232, 92);
+            this.return_btn.TabIndex = 25;
+            this.return_btn.Text = "Return";
+            this.return_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.return_btn.Textcolor = System.Drawing.Color.White;
+            this.return_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.return_btn.Click += new System.EventHandler(this.return_btn_Click);
+            // 
+            // holdOrders_btn
+            // 
+            this.holdOrders_btn.Activecolor = System.Drawing.Color.SteelBlue;
+            this.holdOrders_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.holdOrders_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.holdOrders_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.holdOrders_btn.BorderRadius = 0;
+            this.holdOrders_btn.ButtonText = "Holded Orders";
+            this.holdOrders_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.holdOrders_btn.DisabledColor = System.Drawing.Color.Gray;
+            this.holdOrders_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.holdOrders_btn.ForeColor = System.Drawing.Color.White;
+            this.holdOrders_btn.Iconcolor = System.Drawing.Color.Transparent;
+            this.holdOrders_btn.Iconimage = null;
+            this.holdOrders_btn.Iconimage_right = null;
+            this.holdOrders_btn.Iconimage_right_Selected = null;
+            this.holdOrders_btn.Iconimage_Selected = null;
+            this.holdOrders_btn.IconMarginLeft = 0;
+            this.holdOrders_btn.IconMarginRight = 0;
+            this.holdOrders_btn.IconRightVisible = false;
+            this.holdOrders_btn.IconRightZoom = 0D;
+            this.holdOrders_btn.IconVisible = false;
+            this.holdOrders_btn.IconZoom = 0D;
+            this.holdOrders_btn.IsTab = false;
+            this.holdOrders_btn.Location = new System.Drawing.Point(0, 90);
+            this.holdOrders_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.holdOrders_btn.Name = "holdOrders_btn";
+            this.holdOrders_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.holdOrders_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.holdOrders_btn.OnHoverTextColor = System.Drawing.Color.White;
+            this.holdOrders_btn.selected = false;
+            this.holdOrders_btn.Size = new System.Drawing.Size(232, 92);
+            this.holdOrders_btn.TabIndex = 24;
+            this.holdOrders_btn.Text = "Holded Orders";
+            this.holdOrders_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.holdOrders_btn.Textcolor = System.Drawing.Color.White;
+            this.holdOrders_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.holdOrders_btn.Click += new System.EventHandler(this.HeldOrders_btn_Click);
+            // 
+            // change_quantity
+            // 
+            this.change_quantity.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.change_quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.change_quantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.change_quantity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.change_quantity.BorderRadius = 0;
+            this.change_quantity.ButtonText = "Change Quantity";
+            this.change_quantity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.change_quantity.DisabledColor = System.Drawing.Color.Gray;
+            this.change_quantity.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change_quantity.ForeColor = System.Drawing.Color.White;
+            this.change_quantity.Iconcolor = System.Drawing.Color.Transparent;
+            this.change_quantity.Iconimage = null;
+            this.change_quantity.Iconimage_right = null;
+            this.change_quantity.Iconimage_right_Selected = null;
+            this.change_quantity.Iconimage_Selected = null;
+            this.change_quantity.IconMarginLeft = 0;
+            this.change_quantity.IconMarginRight = 0;
+            this.change_quantity.IconRightVisible = false;
+            this.change_quantity.IconRightZoom = 0D;
+            this.change_quantity.IconVisible = false;
+            this.change_quantity.IconZoom = 0D;
+            this.change_quantity.IsTab = false;
+            this.change_quantity.Location = new System.Drawing.Point(0, 91);
+            this.change_quantity.Margin = new System.Windows.Forms.Padding(0);
+            this.change_quantity.Name = "change_quantity";
+            this.change_quantity.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.change_quantity.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.change_quantity.OnHoverTextColor = System.Drawing.Color.White;
+            this.change_quantity.selected = false;
+            this.change_quantity.Size = new System.Drawing.Size(232, 92);
+            this.change_quantity.TabIndex = 34;
+            this.change_quantity.Text = "Change Quantity";
+            this.change_quantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.change_quantity.Textcolor = System.Drawing.Color.White;
+            this.change_quantity.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.change_quantity.Click += new System.EventHandler(this.change_quantity_Click);
             // 
             // newSale_btn
             // 
@@ -781,7 +703,7 @@
             this.newSale_btn.Text = "New Sale";
             this.newSale_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.newSale_btn.Textcolor = System.Drawing.Color.White;
-            this.newSale_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newSale_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newSale_btn.Click += new System.EventHandler(this.NewSale_btn_Click);
             // 
             // pos_btn
@@ -819,8 +741,86 @@
             this.pos_btn.Text = "POS";
             this.pos_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pos_btn.Textcolor = System.Drawing.Color.White;
-            this.pos_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pos_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pos_btn.Click += new System.EventHandler(this.Pos_btn_Click);
+            // 
+            // hold_btn
+            // 
+            this.hold_btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.hold_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.hold_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.hold_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hold_btn.BorderRadius = 0;
+            this.hold_btn.ButtonText = "Hold";
+            this.hold_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hold_btn.DisabledColor = System.Drawing.Color.Gray;
+            this.hold_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hold_btn.ForeColor = System.Drawing.Color.White;
+            this.hold_btn.Iconcolor = System.Drawing.Color.Transparent;
+            this.hold_btn.Iconimage = null;
+            this.hold_btn.Iconimage_right = null;
+            this.hold_btn.Iconimage_right_Selected = null;
+            this.hold_btn.Iconimage_Selected = null;
+            this.hold_btn.IconMarginLeft = 0;
+            this.hold_btn.IconMarginRight = 0;
+            this.hold_btn.IconRightVisible = false;
+            this.hold_btn.IconRightZoom = 0D;
+            this.hold_btn.IconVisible = false;
+            this.hold_btn.IconZoom = 0D;
+            this.hold_btn.IsTab = false;
+            this.hold_btn.Location = new System.Drawing.Point(0, 270);
+            this.hold_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.hold_btn.Name = "hold_btn";
+            this.hold_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.hold_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.hold_btn.OnHoverTextColor = System.Drawing.Color.White;
+            this.hold_btn.selected = false;
+            this.hold_btn.Size = new System.Drawing.Size(232, 92);
+            this.hold_btn.TabIndex = 36;
+            this.hold_btn.Text = "Hold";
+            this.hold_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.hold_btn.Textcolor = System.Drawing.Color.White;
+            this.hold_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hold_btn.Click += new System.EventHandler(this.hold_btn_Click);
+            // 
+            // deleteItem_btn
+            // 
+            this.deleteItem_btn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.deleteItem_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteItem_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.deleteItem_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteItem_btn.BorderRadius = 0;
+            this.deleteItem_btn.ButtonText = "Delete Item";
+            this.deleteItem_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteItem_btn.DisabledColor = System.Drawing.Color.Gray;
+            this.deleteItem_btn.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteItem_btn.ForeColor = System.Drawing.Color.White;
+            this.deleteItem_btn.Iconcolor = System.Drawing.Color.Transparent;
+            this.deleteItem_btn.Iconimage = null;
+            this.deleteItem_btn.Iconimage_right = null;
+            this.deleteItem_btn.Iconimage_right_Selected = null;
+            this.deleteItem_btn.Iconimage_Selected = null;
+            this.deleteItem_btn.IconMarginLeft = 0;
+            this.deleteItem_btn.IconMarginRight = 0;
+            this.deleteItem_btn.IconRightVisible = false;
+            this.deleteItem_btn.IconRightZoom = 0D;
+            this.deleteItem_btn.IconVisible = false;
+            this.deleteItem_btn.IconZoom = 0D;
+            this.deleteItem_btn.IsTab = false;
+            this.deleteItem_btn.Location = new System.Drawing.Point(0, 182);
+            this.deleteItem_btn.Margin = new System.Windows.Forms.Padding(0);
+            this.deleteItem_btn.Name = "deleteItem_btn";
+            this.deleteItem_btn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.deleteItem_btn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
+            this.deleteItem_btn.OnHoverTextColor = System.Drawing.Color.White;
+            this.deleteItem_btn.selected = false;
+            this.deleteItem_btn.Size = new System.Drawing.Size(232, 92);
+            this.deleteItem_btn.TabIndex = 23;
+            this.deleteItem_btn.Text = "Delete Item";
+            this.deleteItem_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deleteItem_btn.Textcolor = System.Drawing.Color.White;
+            this.deleteItem_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteItem_btn.Click += new System.EventHandler(this.deleteItem_btn_Click);
             // 
             // panel2
             // 
@@ -852,13 +852,14 @@
             this.addItem_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
             this.addItem_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(255)))));
             this.addItem_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addItem_btn.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addItem_btn.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addItem_btn.ForeColor = System.Drawing.Color.White;
             this.addItem_btn.Location = new System.Drawing.Point(1464, 5);
             this.addItem_btn.Name = "addItem_btn";
             this.addItem_btn.Size = new System.Drawing.Size(147, 40);
             this.addItem_btn.TabIndex = 19;
             this.addItem_btn.Text = "Add Item";
+            this.addItem_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.addItem_btn.UseVisualStyleBackColor = false;
             this.addItem_btn.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -877,7 +878,7 @@
             this.dataview_main.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Andalus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -914,7 +915,7 @@
             this.dataview_main.RowHeadersWidth = 25;
             this.dataview_main.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Andalus", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -1050,11 +1051,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.total_usd.AutoSize = true;
             this.total_usd.BackColor = System.Drawing.Color.Transparent;
-            this.total_usd.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.total_usd.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total_usd.ForeColor = System.Drawing.Color.White;
-            this.total_usd.Location = new System.Drawing.Point(21, 146);
+            this.total_usd.Location = new System.Drawing.Point(28, 148);
             this.total_usd.Name = "total_usd";
-            this.total_usd.Size = new System.Drawing.Size(207, 33);
+            this.total_usd.Size = new System.Drawing.Size(220, 41);
             this.total_usd.TabIndex = 27;
             this.total_usd.Text = "Total Price USD :";
             // 
@@ -1064,11 +1065,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usd1.AutoSize = true;
             this.usd1.BackColor = System.Drawing.Color.Transparent;
-            this.usd1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.usd1.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usd1.ForeColor = System.Drawing.Color.White;
-            this.usd1.Location = new System.Drawing.Point(346, 148);
+            this.usd1.Location = new System.Drawing.Point(366, 148);
             this.usd1.Name = "usd1";
-            this.usd1.Size = new System.Drawing.Size(69, 33);
+            this.usd1.Size = new System.Drawing.Size(70, 41);
             this.usd1.TabIndex = 24;
             this.usd1.Text = "USD";
             // 
@@ -1078,11 +1079,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ll3.AutoSize = true;
             this.ll3.BackColor = System.Drawing.Color.Transparent;
-            this.ll3.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.ll3.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ll3.ForeColor = System.Drawing.Color.White;
-            this.ll3.Location = new System.Drawing.Point(345, 96);
+            this.ll3.Location = new System.Drawing.Point(366, 95);
             this.ll3.Name = "ll3";
-            this.ll3.Size = new System.Drawing.Size(65, 33);
+            this.ll3.Size = new System.Drawing.Size(62, 41);
             this.ll3.TabIndex = 23;
             this.ll3.Text = "LBP";
             // 
@@ -1099,7 +1100,7 @@
             this.usdTextBox.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.usdTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.usdTextBox.isPassword = false;
-            this.usdTextBox.Location = new System.Drawing.Point(237, 139);
+            this.usdTextBox.Location = new System.Drawing.Point(257, 145);
             this.usdTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.usdTextBox.Name = "usdTextBox";
             this.usdTextBox.Size = new System.Drawing.Size(100, 50);
@@ -1113,11 +1114,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itemsNumber_Label.AutoSize = true;
             this.itemsNumber_Label.BackColor = System.Drawing.Color.Transparent;
-            this.itemsNumber_Label.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.itemsNumber_Label.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemsNumber_Label.ForeColor = System.Drawing.Color.White;
-            this.itemsNumber_Label.Location = new System.Drawing.Point(21, 35);
+            this.itemsNumber_Label.Location = new System.Drawing.Point(28, 40);
             this.itemsNumber_Label.Name = "itemsNumber_Label";
-            this.itemsNumber_Label.Size = new System.Drawing.Size(178, 33);
+            this.itemsNumber_Label.Size = new System.Drawing.Size(203, 41);
             this.itemsNumber_Label.TabIndex = 21;
             this.itemsNumber_Label.Text = "Items Number :";
             // 
@@ -1134,7 +1135,7 @@
             this.lebanesePoundsTextBox.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lebanesePoundsTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lebanesePoundsTextBox.isPassword = false;
-            this.lebanesePoundsTextBox.Location = new System.Drawing.Point(237, 85);
+            this.lebanesePoundsTextBox.Location = new System.Drawing.Point(257, 91);
             this.lebanesePoundsTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.lebanesePoundsTextBox.Name = "lebanesePoundsTextBox";
             this.lebanesePoundsTextBox.Size = new System.Drawing.Size(100, 50);
@@ -1152,7 +1153,7 @@
             this.itemsNumberTextBox.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.itemsNumberTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.itemsNumberTextBox.isPassword = false;
-            this.itemsNumberTextBox.Location = new System.Drawing.Point(237, 31);
+            this.itemsNumberTextBox.Location = new System.Drawing.Point(257, 38);
             this.itemsNumberTextBox.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.itemsNumberTextBox.Name = "itemsNumberTextBox";
             this.itemsNumberTextBox.Size = new System.Drawing.Size(100, 50);
@@ -1165,11 +1166,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.total_lbp.AutoSize = true;
             this.total_lbp.BackColor = System.Drawing.Color.Transparent;
-            this.total_lbp.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.total_lbp.Font = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.total_lbp.ForeColor = System.Drawing.Color.White;
-            this.total_lbp.Location = new System.Drawing.Point(21, 93);
+            this.total_lbp.Location = new System.Drawing.Point(28, 93);
             this.total_lbp.Name = "total_lbp";
-            this.total_lbp.Size = new System.Drawing.Size(203, 33);
+            this.total_lbp.Size = new System.Drawing.Size(212, 41);
             this.total_lbp.TabIndex = 16;
             this.total_lbp.Text = "Total Price LBP :";
             // 
@@ -1189,7 +1190,7 @@
             this.gc1.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc1.AppearanceCaption.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc1.AppearanceCaption.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.gc1.AppearanceCaption.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gc1.AppearanceCaption.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gc1.AppearanceCaption.ForeColor = System.Drawing.Color.White;
             this.gc1.AppearanceCaption.Options.UseBackColor = true;
             this.gc1.AppearanceCaption.Options.UseBorderColor = true;
@@ -1231,7 +1232,7 @@
             this.return_switch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.return_switch.Font = new System.Drawing.Font("Monotype Corsiva", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.return_switch.ForeColor = System.Drawing.Color.White;
-            this.return_switch.Location = new System.Drawing.Point(444, 141);
+            this.return_switch.Location = new System.Drawing.Point(477, 150);
             this.return_switch.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
             this.return_switch.Name = "return_switch";
             this.return_switch.Oncolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1245,11 +1246,11 @@
             // 
             this.return_access_label.AutoSize = true;
             this.return_access_label.BackColor = System.Drawing.Color.Transparent;
-            this.return_access_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.return_access_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.return_access_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.return_access_label.Location = new System.Drawing.Point(56, 132);
+            this.return_access_label.Location = new System.Drawing.Point(56, 138);
             this.return_access_label.Name = "return_access_label";
-            this.return_access_label.Size = new System.Drawing.Size(337, 28);
+            this.return_access_label.Size = new System.Drawing.Size(390, 38);
             this.return_access_label.TabIndex = 34;
             this.return_access_label.Text = "⫸ Only Admin Can Return Items :";
             // 
@@ -1263,7 +1264,7 @@
             this.reset_settings_btn.ButtonText = "Reset Settings";
             this.reset_settings_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reset_settings_btn.DisabledColor = System.Drawing.Color.Gray;
-            this.reset_settings_btn.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset_settings_btn.Font = new System.Drawing.Font("Andalus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reset_settings_btn.ForeColor = System.Drawing.Color.White;
             this.reset_settings_btn.Iconcolor = System.Drawing.Color.Transparent;
             this.reset_settings_btn.Iconimage = null;
@@ -1289,7 +1290,7 @@
             this.reset_settings_btn.Text = "Reset Settings";
             this.reset_settings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.reset_settings_btn.Textcolor = System.Drawing.Color.White;
-            this.reset_settings_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset_settings_btn.TextFont = new System.Drawing.Font("Andalus", 15.75F, System.Drawing.FontStyle.Bold);
             this.reset_settings_btn.Click += new System.EventHandler(this.reset_settings_btn_Click);
             // 
             // apply_settings_btn
@@ -1302,7 +1303,7 @@
             this.apply_settings_btn.ButtonText = "Apply Changes";
             this.apply_settings_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apply_settings_btn.DisabledColor = System.Drawing.Color.Gray;
-            this.apply_settings_btn.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apply_settings_btn.Font = new System.Drawing.Font("Andalus", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apply_settings_btn.ForeColor = System.Drawing.Color.White;
             this.apply_settings_btn.Iconcolor = System.Drawing.Color.Transparent;
             this.apply_settings_btn.Iconimage = null;
@@ -1328,7 +1329,7 @@
             this.apply_settings_btn.Text = "Apply Changes";
             this.apply_settings_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.apply_settings_btn.Textcolor = System.Drawing.Color.White;
-            this.apply_settings_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apply_settings_btn.TextFont = new System.Drawing.Font("Andalus", 15.75F, System.Drawing.FontStyle.Bold);
             this.apply_settings_btn.Click += new System.EventHandler(this.apply_settings_btn_Click);
             // 
             // dollar_txtedit
@@ -1342,7 +1343,7 @@
             this.dollar_txtedit.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dollar_txtedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.dollar_txtedit.isPassword = false;
-            this.dollar_txtedit.Location = new System.Drawing.Point(294, 183);
+            this.dollar_txtedit.Location = new System.Drawing.Point(339, 196);
             this.dollar_txtedit.Margin = new System.Windows.Forms.Padding(0);
             this.dollar_txtedit.Name = "dollar_txtedit";
             this.dollar_txtedit.Size = new System.Drawing.Size(142, 43);
@@ -1360,7 +1361,7 @@
             this.euro_txtedit.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.euro_txtedit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.euro_txtedit.isPassword = false;
-            this.euro_txtedit.Location = new System.Drawing.Point(294, 243);
+            this.euro_txtedit.Location = new System.Drawing.Point(339, 248);
             this.euro_txtedit.Margin = new System.Windows.Forms.Padding(0);
             this.euro_txtedit.Name = "euro_txtedit";
             this.euro_txtedit.Size = new System.Drawing.Size(142, 43);
@@ -1371,11 +1372,11 @@
             // 
             this.ll2.AutoSize = true;
             this.ll2.BackColor = System.Drawing.Color.Transparent;
-            this.ll2.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ll2.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ll2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ll2.Location = new System.Drawing.Point(439, 250);
+            this.ll2.Location = new System.Drawing.Point(484, 249);
             this.ll2.Name = "ll2";
-            this.ll2.Size = new System.Drawing.Size(56, 28);
+            this.ll2.Size = new System.Drawing.Size(56, 38);
             this.ll2.TabIndex = 31;
             this.ll2.Text = "LBP";
             // 
@@ -1383,11 +1384,11 @@
             // 
             this.ll1.AutoSize = true;
             this.ll1.BackColor = System.Drawing.Color.Transparent;
-            this.ll1.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ll1.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ll1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ll1.Location = new System.Drawing.Point(439, 190);
+            this.ll1.Location = new System.Drawing.Point(484, 196);
             this.ll1.Name = "ll1";
-            this.ll1.Size = new System.Drawing.Size(56, 28);
+            this.ll1.Size = new System.Drawing.Size(56, 38);
             this.ll1.TabIndex = 30;
             this.ll1.Text = "LBP";
             // 
@@ -1398,7 +1399,7 @@
             this.startup_switch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startup_switch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.startup_switch.ForeColor = System.Drawing.Color.White;
-            this.startup_switch.Location = new System.Drawing.Point(444, 94);
+            this.startup_switch.Location = new System.Drawing.Point(477, 104);
             this.startup_switch.Margin = new System.Windows.Forms.Padding(11, 9, 11, 9);
             this.startup_switch.Name = "startup_switch";
             this.startup_switch.Oncolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1413,11 +1414,11 @@
             // 
             this.euro_price_label.AutoSize = true;
             this.euro_price_label.BackColor = System.Drawing.Color.Transparent;
-            this.euro_price_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.euro_price_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.euro_price_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.euro_price_label.Location = new System.Drawing.Point(56, 243);
+            this.euro_price_label.Location = new System.Drawing.Point(56, 249);
             this.euro_price_label.Name = "euro_price_label";
-            this.euro_price_label.Size = new System.Drawing.Size(220, 28);
+            this.euro_price_label.Size = new System.Drawing.Size(260, 38);
             this.euro_price_label.TabIndex = 26;
             this.euro_price_label.Text = "⫸ Price of 1€ (Euro) :";
             // 
@@ -1425,11 +1426,11 @@
             // 
             this.dollar_price_label.AutoSize = true;
             this.dollar_price_label.BackColor = System.Drawing.Color.Transparent;
-            this.dollar_price_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dollar_price_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dollar_price_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dollar_price_label.Location = new System.Drawing.Point(56, 190);
+            this.dollar_price_label.Location = new System.Drawing.Point(56, 196);
             this.dollar_price_label.Name = "dollar_price_label";
-            this.dollar_price_label.Size = new System.Drawing.Size(235, 28);
+            this.dollar_price_label.Size = new System.Drawing.Size(280, 38);
             this.dollar_price_label.TabIndex = 25;
             this.dollar_price_label.Text = "⫸ Price of 1$ (dollar)  :";
             // 
@@ -1437,11 +1438,11 @@
             // 
             this.startup_label.AutoSize = true;
             this.startup_label.BackColor = System.Drawing.Color.Transparent;
-            this.startup_label.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startup_label.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startup_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.startup_label.Location = new System.Drawing.Point(55, 85);
+            this.startup_label.Location = new System.Drawing.Point(55, 91);
             this.startup_label.Name = "startup_label";
-            this.startup_label.Size = new System.Drawing.Size(366, 28);
+            this.startup_label.Size = new System.Drawing.Size(408, 38);
             this.startup_label.TabIndex = 24;
             this.startup_label.Text = "⫸ Start STSM when windows start :";
             // 
@@ -1463,7 +1464,7 @@
             this.gc3.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc3.AppearanceCaption.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc3.AppearanceCaption.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.gc3.AppearanceCaption.Font = new System.Drawing.Font("Monotype Corsiva", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gc3.AppearanceCaption.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold);
             this.gc3.AppearanceCaption.ForeColor = System.Drawing.Color.White;
             this.gc3.AppearanceCaption.Options.UseBackColor = true;
             this.gc3.AppearanceCaption.Options.UseBorderColor = true;
@@ -1513,7 +1514,7 @@
             this.note_clear_all.IconVisible = false;
             this.note_clear_all.IconZoom = 10D;
             this.note_clear_all.IsTab = false;
-            this.note_clear_all.Location = new System.Drawing.Point(126, 211);
+            this.note_clear_all.Location = new System.Drawing.Point(126, 217);
             this.note_clear_all.Margin = new System.Windows.Forms.Padding(0);
             this.note_clear_all.Name = "note_clear_all";
             this.note_clear_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1525,7 +1526,7 @@
             this.note_clear_all.Text = "Clear All";
             this.note_clear_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.note_clear_all.Textcolor = System.Drawing.Color.White;
-            this.note_clear_all.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.note_clear_all.TextFont = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.note_clear_all.Click += new System.EventHandler(this.note_clear_all_Click);
             // 
             // note_disable_enable_all
@@ -1553,7 +1554,7 @@
             this.note_disable_enable_all.IconVisible = false;
             this.note_disable_enable_all.IconZoom = 10D;
             this.note_disable_enable_all.IsTab = false;
-            this.note_disable_enable_all.Location = new System.Drawing.Point(126, 136);
+            this.note_disable_enable_all.Location = new System.Drawing.Point(126, 142);
             this.note_disable_enable_all.Margin = new System.Windows.Forms.Padding(0);
             this.note_disable_enable_all.Name = "note_disable_enable_all";
             this.note_disable_enable_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1565,7 +1566,7 @@
             this.note_disable_enable_all.Text = "Disable All";
             this.note_disable_enable_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.note_disable_enable_all.Textcolor = System.Drawing.Color.White;
-            this.note_disable_enable_all.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.note_disable_enable_all.TextFont = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.note_disable_enable_all.Click += new System.EventHandler(this.note_disable_enable_all_Click);
             // 
             // manage_note
@@ -1593,7 +1594,7 @@
             this.manage_note.IconVisible = false;
             this.manage_note.IconZoom = 10D;
             this.manage_note.IsTab = false;
-            this.manage_note.Location = new System.Drawing.Point(126, 57);
+            this.manage_note.Location = new System.Drawing.Point(126, 63);
             this.manage_note.Margin = new System.Windows.Forms.Padding(0);
             this.manage_note.Name = "manage_note";
             this.manage_note.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1605,7 +1606,7 @@
             this.manage_note.Text = "Manage Notes";
             this.manage_note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.manage_note.Textcolor = System.Drawing.Color.White;
-            this.manage_note.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manage_note.TextFont = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manage_note.Click += new System.EventHandler(this.manage_note_Click);
             // 
             // gc2
@@ -1625,7 +1626,7 @@
             this.gc2.AppearanceCaption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc2.AppearanceCaption.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.gc2.AppearanceCaption.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.gc2.AppearanceCaption.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gc2.AppearanceCaption.Font = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gc2.AppearanceCaption.ForeColor = System.Drawing.Color.White;
             this.gc2.AppearanceCaption.Options.UseBackColor = true;
             this.gc2.AppearanceCaption.Options.UseBorderColor = true;
@@ -1645,7 +1646,7 @@
             this.gc2.Margin = new System.Windows.Forms.Padding(0);
             this.gc2.Name = "gc2";
             this.gc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gc2.Size = new System.Drawing.Size(815, 300);
+            this.gc2.Size = new System.Drawing.Size(815, 301);
             this.gc2.TabIndex = 19;
             this.gc2.Text = "Promotions";
             // 
@@ -1674,7 +1675,7 @@
             this.pro_disable_enable_all.IconVisible = false;
             this.pro_disable_enable_all.IconZoom = 0D;
             this.pro_disable_enable_all.IsTab = false;
-            this.pro_disable_enable_all.Location = new System.Drawing.Point(124, 129);
+            this.pro_disable_enable_all.Location = new System.Drawing.Point(124, 135);
             this.pro_disable_enable_all.Margin = new System.Windows.Forms.Padding(0);
             this.pro_disable_enable_all.Name = "pro_disable_enable_all";
             this.pro_disable_enable_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1686,7 +1687,7 @@
             this.pro_disable_enable_all.Text = "Disable All";
             this.pro_disable_enable_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pro_disable_enable_all.Textcolor = System.Drawing.Color.White;
-            this.pro_disable_enable_all.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pro_disable_enable_all.TextFont = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pro_disable_enable_all.Click += new System.EventHandler(this.pro_disable_all_Click);
             // 
             // pro_clear_all
@@ -1714,7 +1715,7 @@
             this.pro_clear_all.IconVisible = false;
             this.pro_clear_all.IconZoom = 0D;
             this.pro_clear_all.IsTab = false;
-            this.pro_clear_all.Location = new System.Drawing.Point(124, 206);
+            this.pro_clear_all.Location = new System.Drawing.Point(124, 212);
             this.pro_clear_all.Margin = new System.Windows.Forms.Padding(0);
             this.pro_clear_all.Name = "pro_clear_all";
             this.pro_clear_all.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1726,7 +1727,7 @@
             this.pro_clear_all.Text = "Clear All";
             this.pro_clear_all.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pro_clear_all.Textcolor = System.Drawing.Color.White;
-            this.pro_clear_all.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pro_clear_all.TextFont = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pro_clear_all.Click += new System.EventHandler(this.pro_clear_all_Click);
             // 
             // pro_manage
@@ -1754,7 +1755,7 @@
             this.pro_manage.IconVisible = false;
             this.pro_manage.IconZoom = 0D;
             this.pro_manage.IsTab = false;
-            this.pro_manage.Location = new System.Drawing.Point(124, 56);
+            this.pro_manage.Location = new System.Drawing.Point(124, 62);
             this.pro_manage.Margin = new System.Windows.Forms.Padding(0);
             this.pro_manage.Name = "pro_manage";
             this.pro_manage.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -1766,7 +1767,7 @@
             this.pro_manage.Text = "Manage Promotions";
             this.pro_manage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.pro_manage.Textcolor = System.Drawing.Color.White;
-            this.pro_manage.TextFont = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pro_manage.TextFont = new System.Drawing.Font("Andalus", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pro_manage.Click += new System.EventHandler(this.pro_manage_Click);
             // 
             // lang_popup

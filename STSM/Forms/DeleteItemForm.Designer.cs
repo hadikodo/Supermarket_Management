@@ -110,7 +110,7 @@ namespace STSM.Forms
             this.cus_del_btn.Text = "Custom Delete";
             this.cus_del_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cus_del_btn.Textcolor = System.Drawing.Color.White;
-            this.cus_del_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cus_del_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cus_del_btn.Click += new System.EventHandler(this.cus_del_btn_Click);
             // 
             // canceldel_btn
@@ -148,18 +148,18 @@ namespace STSM.Forms
             this.canceldel_btn.Text = "Cancel";
             this.canceldel_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.canceldel_btn.Textcolor = System.Drawing.Color.White;
-            this.canceldel_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.canceldel_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.canceldel_btn.Click += new System.EventHandler(this.canceldel_btn_Click);
             // 
             // del_item_qte_title
             // 
             this.del_item_qte_title.AutoSize = true;
             this.del_item_qte_title.BackColor = System.Drawing.Color.Transparent;
-            this.del_item_qte_title.Font = new System.Drawing.Font("Monotype Corsiva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.del_item_qte_title.Font = new System.Drawing.Font("Andalus", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.del_item_qte_title.ForeColor = System.Drawing.Color.White;
             this.del_item_qte_title.Location = new System.Drawing.Point(229, 111);
             this.del_item_qte_title.Name = "del_item_qte_title";
-            this.del_item_qte_title.Size = new System.Drawing.Size(309, 39);
+            this.del_item_qte_title.Size = new System.Drawing.Size(346, 48);
             this.del_item_qte_title.TabIndex = 1;
             this.del_item_qte_title.Text = "Quantity To Be Deleted";
             // 
@@ -198,7 +198,7 @@ namespace STSM.Forms
             this.DeleteAll_btn.Text = "Delete All";
             this.DeleteAll_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DeleteAll_btn.Textcolor = System.Drawing.Color.White;
-            this.DeleteAll_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteAll_btn.TextFont = new System.Drawing.Font("Andalus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteAll_btn.Click += new System.EventHandler(this.DeleteAll_btn_Click);
             // 
             // del_item_qte_txtbox

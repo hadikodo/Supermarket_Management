@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Exit_Message));
             this.Yes_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.No_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.No_btn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.Yes_btn.IconVisible = true;
             this.Yes_btn.IconZoom = 90D;
             this.Yes_btn.IsTab = false;
-            this.Yes_btn.Location = new System.Drawing.Point(72, 178);
+            this.Yes_btn.Location = new System.Drawing.Point(96, 178);
             this.Yes_btn.Margin = new System.Windows.Forms.Padding(0);
             this.Yes_btn.Name = "Yes_btn";
             this.Yes_btn.Normalcolor = System.Drawing.Color.Navy;
@@ -71,7 +71,7 @@
             this.Yes_btn.Text = "Yes";
             this.Yes_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Yes_btn.Textcolor = System.Drawing.Color.White;
-            this.Yes_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Yes_btn.TextFont = new System.Drawing.Font("Andalus", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Yes_btn.Click += new System.EventHandler(this.Yes_btn_Click);
             // 
             // bunifuGradientPanel1
@@ -93,6 +93,19 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(561, 305);
             this.bunifuGradientPanel1.TabIndex = 15;
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Andalus", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(167, 78);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(243, 54);
+            this.bunifuCustomLabel1.TabIndex = 16;
+            this.bunifuCustomLabel1.Text = "Are you sure ?";
             // 
             // No_btn
             // 
@@ -117,7 +130,7 @@
             this.No_btn.IconVisible = true;
             this.No_btn.IconZoom = 90D;
             this.No_btn.IsTab = false;
-            this.No_btn.Location = new System.Drawing.Point(330, 178);
+            this.No_btn.Location = new System.Drawing.Point(324, 178);
             this.No_btn.Margin = new System.Windows.Forms.Padding(0);
             this.No_btn.Name = "No_btn";
             this.No_btn.Normalcolor = System.Drawing.Color.Navy;
@@ -129,21 +142,8 @@
             this.No_btn.Text = "No";
             this.No_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.No_btn.Textcolor = System.Drawing.Color.White;
-            this.No_btn.TextFont = new System.Drawing.Font("Monotype Corsiva", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.No_btn.TextFont = new System.Drawing.Font("Andalus", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.No_btn.Click += new System.EventHandler(this.No_btn_Click);
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Monotype Corsiva", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(167, 78);
-            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(207, 43);
-            this.bunifuCustomLabel1.TabIndex = 16;
-            this.bunifuCustomLabel1.Text = "Are you sure ?";
             // 
             // Exit_Message
             // 

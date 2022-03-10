@@ -724,62 +724,70 @@ namespace STSM
 
         private void return_btn_Click(object sender, EventArgs e)
         {
-            DataAccessLayer dal = new DataAccessLayer();
-            DataRow[] dr = MainMenu.finalDataTable.Select();
-            float receivedAmount;
-            float totalAmount;
-            if (!(string.IsNullOrWhiteSpace(lebanesePoundsTextBox.Text)))
+            if (dataview_main.RowCount != 0)
             {
-                DataRow drLocal = null;
-                foreach (DataGridViewRow dr2 in dataview_main.Rows)
+                DataAccessLayer dal = new DataAccessLayer();
+                DataRow[] dr = MainMenu.finalDataTable.Select();
+                float receivedAmount;
+                float totalAmount;
+                if (!(string.IsNullOrWhiteSpace(lebanesePoundsTextBox.Text)))
                 {
-                    if (!(dr2.Cells[0].Value == null || dr2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(dr2.Cells[0].Value.ToString())))
+                    DataRow drLocal = null;
+                    foreach (DataGridViewRow dr2 in dataview_main.Rows)
                     {
-                        drLocal = finalDataTable.NewRow();
-                        drLocal["Barcode"] = dr2.Cells["barcode_clm"].Value.ToString();
-                        drLocal["ProductName"] = dr2.Cells["productName_clm"].Value.ToString();
-                        drLocal["Price"] = dr2.Cells["price_clm"].Value.ToString();
-                        drLocal["Quantity"] = dr2.Cells["quantity_clm"].Value.ToString();
-                        drLocal["Total"] = dr2.Cells["total_clm"].Value.ToString();
-                        drLocal["P_ID"] = dr2.Cells["productId_clm"].Value.ToString();
-                        finalDataTable.Rows.Add(drLocal);
-                    }
-                }
-                if (MessageBox.Show("You are about to return the scanned items. This will affect the stock database. Are you sure you want to continue?", "Return Items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    totalAmount = float.Parse(lebanesePoundsTextBox.Text.ToString());
-                    dal.cnOpen();
-                    SqlCommand cmd1 = new SqlCommand("INSERT INTO Return_r (R_Date, Total_Price, U_ID, Active) VALUES(" + "GETDATE()" + "," + totalAmount + "," + 3 + "," + 0 + ")", dal.getConnection());
-                    cmd1.ExecuteNonQuery();
-                    dal.cnClose();
-                    int oID = 0;
-                    dal.cnOpen();
-                    SqlCommand cmd12 = new SqlCommand("SELECT TOP 1 * FROM Return_r ORDER BY R_ID DESC", dal.getConnection());
-                    SqlDataReader datardr = cmd12.ExecuteReader();
-                    while (datardr.Read())
-                    {
-                        oID = Int32.Parse(datardr["R_ID"].ToString());
-                    }
-                    dal.cnClose();
-                    foreach (DataRow row in MainMenu.finalDataTable.Rows)
-                    {
-                        if (row[5].ToString() != "posItem")
+                        if (!(dr2.Cells[0].Value == null || dr2.Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(dr2.Cells[0].Value.ToString())))
                         {
-                            dal.cnOpen();
-                            SqlCommand cmd2 = new SqlCommand("INSERT INTO Return_Details (R_ID, P_ID, QTE, Item_Price,Total_Price) VALUES(" + oID + "," + Int32.Parse(row["P_ID"].ToString()) + "," + Int32.Parse(row["Quantity"].ToString()) + "," + Int32.Parse(row["Price"].ToString()) + "," + Int32.Parse(row["Total"].ToString()) + ")", dal.getConnection());
-                            cmd2.ExecuteNonQuery();
-                            dal.cnClose();
+                            drLocal = finalDataTable.NewRow();
+                            drLocal["Barcode"] = dr2.Cells["barcode_clm"].Value.ToString();
+                            drLocal["ProductName"] = dr2.Cells["productName_clm"].Value.ToString();
+                            drLocal["Price"] = dr2.Cells["price_clm"].Value.ToString();
+                            drLocal["Quantity"] = dr2.Cells["quantity_clm"].Value.ToString();
+                            drLocal["Total"] = dr2.Cells["total_clm"].Value.ToString();
+                            drLocal["P_ID"] = dr2.Cells["productId_clm"].Value.ToString();
+                            finalDataTable.Rows.Add(drLocal);
                         }
                     }
-                    MessageBox.Show("Successfully completed return. The items have been added back to the stock.");
+                    if (MessageBox.Show("You are about to return the scanned items. This will affect the stock database. Are you sure you want to continue?", "Return Items", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        totalAmount = float.Parse(lebanesePoundsTextBox.Text.ToString());
+                        dal.cnOpen();
+                        SqlCommand cmd1 = new SqlCommand("INSERT INTO Return_r (R_Date, Total_Price, U_ID, Active) VALUES(" + "GETDATE()" + "," + totalAmount + "," + 3 + "," + 0 + ")", dal.getConnection());
+                        cmd1.ExecuteNonQuery();
+                        dal.cnClose();
+                        int oID = 0;
+                        dal.cnOpen();
+                        SqlCommand cmd12 = new SqlCommand("SELECT TOP 1 * FROM Return_r ORDER BY R_ID DESC", dal.getConnection());
+                        SqlDataReader datardr = cmd12.ExecuteReader();
+                        while (datardr.Read())
+                        {
+                            oID = Int32.Parse(datardr["R_ID"].ToString());
+                        }
+                        dal.cnClose();
+                        foreach (DataRow row in MainMenu.finalDataTable.Rows)
+                        {
+                            if (row[5].ToString() != "posItem")
+                            {
+                                dal.cnOpen();
+                                SqlCommand cmd2 = new SqlCommand("INSERT INTO Return_Details (R_ID, P_ID, QTE, Item_Price,Total_Price) VALUES(" + oID + "," + Int32.Parse(row["P_ID"].ToString()) + "," + Int32.Parse(row["Quantity"].ToString()) + "," + Int32.Parse(row["Price"].ToString()) + "," + Int32.Parse(row["Total"].ToString()) + ")", dal.getConnection());
+                                cmd2.ExecuteNonQuery();
+                                dal.cnClose();
+                            }
+                        }
+                        MessageBox.Show("Successfully completed return. The items have been added back to the stock.");
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Please enter an item to be returned first");
+                }
+                barcode_bar.Focus();
+                home_btn_Click(home_btn, e);
             }
             else
             {
-                MessageBox.Show("Please enter an item to be returned first");
+                MessageBox.Show("Please Add At Least One Item !");
+                barcode_bar.Focus();
             }
-            barcode_bar.Focus();
-            home_btn_Click(home_btn, e);
         }
 
         private void change_quantity_Click(object sender, EventArgs e)

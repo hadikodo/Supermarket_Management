@@ -16,7 +16,7 @@
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>D:\Publish\STSM\</PublishUrl>
+    <PublishUrl>C:\Publish\STSM\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,9 +28,9 @@
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>\\AYKUDO\C%24\Users\hadih\OneDrive\Documents\GitHub\STSM\STSM\</UpdateUrl>
     <PublisherName>SuperTech Solution</PublisherName>
-    <MinimumRequiredVersion>1.0.0.43</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.44</MinimumRequiredVersion>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>45</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

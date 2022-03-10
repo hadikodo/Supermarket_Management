@@ -74,7 +74,6 @@ namespace STSM.Forms
                 {
                     System.Threading.Thread.Sleep(1500);
                     barLabel.Text = "Connecting to DataBase ...";
-                    barLabel.Location = new Point(215, 259);
                     loading_ProgressBar.Value += 6;
                     tvalue = tvalue + 6;
                     Progress_Value.BackColor = Color.AliceBlue;
@@ -89,8 +88,6 @@ namespace STSM.Forms
                         try
                         {
                             con.Open();
-                            barLabel.Text = "Starting STSM...";
-                            barLabel.Location = new Point(220, 259);
 
                         }
                         catch (Exception ex)

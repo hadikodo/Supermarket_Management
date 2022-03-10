@@ -16,7 +16,7 @@ namespace STSM.Classes
         /// <summary>
         /// ////////////////////Connections////////////////////////////////
         /// </summary>
-        private static String conString = "Data Source=AYkudo;Initial Catalog=STSM_DB;Integrated Security=True"; 
+        private static String conString = "Data Source=DESKTOP-A846TAN;Initial Catalog=STSM_DB;Integrated Security=True"; 
         private  SqlConnection sqlconn = new SqlConnection(conString);
         private  DataSet ds = new DataSet();    
         private  SqlDataAdapter da = new SqlDataAdapter();
